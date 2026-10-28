@@ -268,11 +268,15 @@
       "hero.note2": "English + 中文",
       "hero.note3": "Privacy-first",
       "hero.photoAlt": "A golden retriever, tabby cat, rabbit and budgie sitting together",
-      "hero.idLabel": "Live digital ID",
-      "hero.idStatus": "PawID Active",
-      "hero.idBreed": "German Shepherd · 6",
       "hero.tagScan": "Scan me",
       "hero.status": "PawID Active",
+      "hero.pet1": "Golden Retriever",
+      "hero.pet2": "Tabby Cat",
+      "hero.pet3": "Rabbit",
+      "hero.pet4": "Budgie",
+      "hero.demoIdLabel": "Demo digital ID",
+      "hero.demoStatus": "Demo only",
+      "hero.demoBreed": "Homepage demo",
       "aria.skip": "Skip to content",
 
       "trust.1": "Digital pet identity",
@@ -637,11 +641,15 @@
       "hero.note2": "中英双语",
       "hero.note3": "隐私优先",
       "hero.photoAlt": "金毛犬、狸花猫、兔子和虎皮鹦鹉依偎在一起",
-      "hero.idLabel": "数字身份预览",
-      "hero.idStatus": "PawID 已启用",
-      "hero.idBreed": "德国牧羊犬 · 6岁",
       "hero.tagScan": "扫码",
       "hero.status": "PawID 已启用",
+      "hero.pet1": "金毛犬",
+      "hero.pet2": "狸花猫",
+      "hero.pet3": "兔子",
+      "hero.pet4": "虎皮鹦鹉",
+      "hero.demoIdLabel": "演示数字身份",
+      "hero.demoStatus": "仅供演示",
+      "hero.demoBreed": "首页演示",
       "aria.skip": "跳到主要内容",
 
       "trust.1": "宠物数字身份",
@@ -1324,6 +1332,8 @@
 
   function qrDataFor(value) {
     var raw = String(value || "").trim();
+    // Demo-only payloads are encoded as plain text, never resolved to a pet.
+    if (/^demo:/i.test(raw)) return raw;
     if (/^(https?:|file:)/i.test(raw)) return raw;
     if (/\.html?(?:[?#]|$)/i.test(raw) || raw.indexOf("?") !== -1) return absoluteUrl(raw);
 
@@ -3291,6 +3301,100 @@
     updateMenuAria();
   }
 
+  /* ------------------------------------------------------------------------
+     Homepage demo digital ID card
+     ------------------------------------------------------------------------ */
+  var HERO_DEMO_PETS = [
+    { id: "PAW-DEMO-001", nameKey: "hero.pet1", photo: "37% 35%" },
+    { id: "PAW-DEMO-002", nameKey: "hero.pet2", photo: "83% 50%" },
+    { id: "PAW-DEMO-003", nameKey: "hero.pet3", photo: "47% 71%" },
+    { id: "PAW-DEMO-004", nameKey: "hero.pet4", photo: "100% 72%" }
+  ];
+
+  function initHeroDemoCard() {
+    var card = document.querySelector(".hero-id");
+    if (!card) return;
+
+    var content = card.querySelector("[data-hero-demo-content]");
+    var name = card.querySelector("[data-hero-demo-name]");
+    var id = card.querySelector("[data-hero-demo-id]");
+    var qr = card.querySelector("[data-hero-demo-qr]");
+    var photo = card.querySelector("[data-hero-demo-photo]");
+    if (!content || !name || !id || !qr || !photo) return;
+
+    var index = 0;
+    var cycleTimer = null;
+    var swapTimer = null;
+    var reduceQuery = window.matchMedia
+      ? window.matchMedia("(prefers-reduced-motion: reduce)")
+      : null;
+
+    function reduced() {
+      return !!(reduceQuery && reduceQuery.matches);
+    }
+
+    function paint(i) {
+      var demo = HERO_DEMO_PETS[i];
+      name.dataset.i18n = demo.nameKey;
+      name.textContent = t(demo.nameKey);
+      id.textContent = demo.id;
+      photo.style.backgroundPosition = demo.photo;
+      var payload = "demo:" + demo.id;
+      qr.dataset.demoQr = payload;
+      qr.innerHTML = qrSvg(payload);
+    }
+
+    function clearSwap() {
+      if (swapTimer) {
+        window.clearTimeout(swapTimer);
+        swapTimer = null;
+      }
+      content.classList.remove("is-swapping-out");
+      content.classList.remove("is-swapping-in");
+    }
+
+    function advance() {
+      index = (index + 1) % HERO_DEMO_PETS.length;
+
+      if (reduced()) {
+        clearSwap();
+        paint(index);
+        return;
+      }
+
+      content.classList.remove("is-swapping-in");
+      content.classList.add("is-swapping-out");
+      swapTimer = window.setTimeout(function () {
+        paint(index);
+        content.classList.remove("is-swapping-out");
+        content.classList.add("is-swapping-in");
+        void content.offsetWidth;
+        content.classList.remove("is-swapping-in");
+        swapTimer = null;
+      }, 240);
+    }
+
+    function stop() {
+      if (cycleTimer) {
+        window.clearInterval(cycleTimer);
+        cycleTimer = null;
+      }
+    }
+
+    function start() {
+      stop();
+      if (!document.hidden) cycleTimer = window.setInterval(advance, 1800);
+    }
+
+    paint(index);
+    start();
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) stop();
+      else start();
+    });
+  }
+
   function initHeader() {
     var header = document.getElementById("site-header");
     if (header) {
@@ -3554,8 +3658,10 @@
     document.addEventListener("keydown", handleKeydown);
     initQrCodes();
 
-    if (page === "home") renderFeatured();
-    else if (page === "pets") renderPetsPage();
+    if (page === "home") {
+      initHeroDemoCard();
+      renderFeatured();
+    } else if (page === "pets") renderPetsPage();
     else if (page === "pet") renderPetPage();
     else if (page === "create") initCreatePage();
 
