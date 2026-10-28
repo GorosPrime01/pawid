@@ -75,22 +75,22 @@
         <div class="stats-row">
           <div class="stat-card reveal">
             <div>
-              <p class="stat-card__label" data-i18n="pets.stat1">Pets protected</p>
+              <p class="stat-card__label" data-i18n="pets.stat1">Pet Profiles</p>
               <p class="stat-card__value" id="stat-pets">03</p>
             </div>
             <span class="stat-card__icon"><svg class="icon icon--paw"><use href="#i-paw"></use></svg></span>
           </div>
           <div class="stat-card reveal reveal-delay-1">
             <div>
-              <p class="stat-card__label" data-i18n="pets.stat2">Digital IDs ready</p>
+              <p class="stat-card__label" data-i18n="pets.stat2">Digital IDs</p>
               <p class="stat-card__value" id="stat-ids">03</p>
             </div>
             <span class="stat-card__icon"><svg class="icon"><use href="#i-id-card"></use></svg></span>
           </div>
           <div class="stat-card reveal reveal-delay-2">
             <div>
-              <p class="stat-card__label" data-i18n="pets.stat3">Safety information</p>
-              <p class="stat-card__value stat-card__value--text" data-i18n="pets.stat3Value">Bilingual</p>
+              <p class="stat-card__label" data-i18n="pets.stat3">Bilingual Safety Info</p>
+              <p class="stat-card__value stat-card__value--text" data-i18n="pets.stat3Value">EN · 中文</p>
             </div>
             <span class="stat-card__icon"><svg class="icon"><use href="#i-globe"></use></svg></span>
           </div>
@@ -133,7 +133,7 @@
         <div>
           <h3 class="footer-title" data-i18n="footer.safety">Safety</h3>
           <div class="footer-links">
-            <a href="pet.html?id=ice&amp;lost=1" data-i18n="footer.lostGuide">Lost Mode guide</a>
+            <a href="pet.html?id=ice&amp;mode=lost" data-i18n="footer.lostGuide">Lost Mode guide</a>
             <a href="index.html#tag" data-i18n="footer.qrTag">The QR tag</a>
             <a href="index.html#privacy" data-i18n="footer.privacy">Privacy promise</a>
           </div>
@@ -158,6 +158,7 @@
   <div id="lost-root" hidden></div>
   <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
 
+  <script src="vendor/qrcode.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

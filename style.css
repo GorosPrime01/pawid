@@ -4353,6 +4353,8 @@ select.input {
 }
 
 .upload__preview-meta strong {
+  max-width: 100%;
+  overflow-wrap: anywhere;
   font-size: 12px;
   font-weight: 600;
 }
@@ -4692,6 +4694,509 @@ select.input {
 /* scroll margin for anchors */
 [id] {
   scroll-margin-top: calc(var(--header-h) + 18px);
+}
+
+/* ---------- V2: wrapping, status and privacy ---------- */
+html {
+  scroll-padding-top: calc(var(--header-h) + 20px);
+}
+
+[id] {
+  scroll-margin-top: calc(var(--header-h) + 24px);
+}
+
+.page-hero {
+  padding-top: clamp(40px, 5.4vw, 72px);
+}
+
+.pet-layout,
+.pet-info,
+.pet-sections,
+.panel,
+.pet-gallery,
+.care-note,
+.care-note > div,
+.contact-tile,
+.health-item,
+.privacy-half,
+.privacy-list-inline li,
+.lost-panel,
+.lost-info,
+.lost-call-card,
+.lost-medical__item,
+.lost-medical__value,
+.detail-grid__item,
+.favourite-row > div,
+.dash-card__body,
+.preview-card__body,
+.id-card__info {
+  min-width: 0;
+}
+
+.care-note {
+  align-items: flex-start;
+}
+
+.care-note > div {
+  flex: 1 1 auto;
+}
+
+.care-note p,
+.health-item dd,
+.contact-tile strong,
+.contact-tile a,
+.contact-tile small,
+.lost-instruction__en,
+.lost-instruction__zh,
+.lost-medical__en,
+.lost-medical__zh,
+.lost-info__value,
+.detail-grid__item dd,
+.favourite-row dd,
+.personality-quote,
+.privacy-half p,
+.privacy-list-inline li,
+.owner-private-note span,
+.dash-card__meta dd,
+.pet-card__meta span,
+.pet-tags .pill,
+.preview-card__meta,
+.preview-card__location span,
+.preview-card__name {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.health-grid,
+.emergency-grid,
+.privacy-split {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.owner-private-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 14px;
+  color: var(--muted-soft);
+  font-size: 10.5px;
+  line-height: 1.6;
+}
+
+.owner-private-note .icon {
+  width: 13px;
+  height: 13px;
+  margin-top: 1px;
+  flex: 0 0 auto;
+  color: var(--sage);
+}
+
+.contact-tile__tag {
+  margin-left: auto;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(146, 134, 122, 0.12);
+  color: var(--muted-soft);
+  font-size: 7.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  white-space: normal;
+}
+
+.privacy-list-inline {
+  display: grid;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.privacy-list-inline li {
+  position: relative;
+  padding-left: 14px;
+  color: var(--muted);
+  font-size: 10.5px;
+  line-height: 1.55;
+}
+
+.privacy-list-inline li::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.privacy-list-inline--private li::before {
+  background: var(--muted-soft);
+}
+
+/* ---------- V2: Digital ID card ---------- */
+.id-card__name {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow-wrap: anywhere;
+  line-height: 1.02;
+}
+
+.id-card__location .id-card__value {
+  overflow: visible;
+  font-size: 1.8cqw;
+  font-weight: 600;
+  white-space: normal;
+  text-overflow: clip;
+  overflow-wrap: anywhere;
+}
+
+.id-card__foot > span:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.id-card__number .id-card__value {
+  font-size: 1.9cqw;
+  font-weight: 700;
+}
+
+.id-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5cqw;
+  max-width: 100%;
+  margin-top: 0.9cqw;
+  padding: 0.55cqw 1.05cqw;
+  border: 1px solid rgba(111, 130, 104, 0.3);
+  border-radius: 999px;
+  background: rgba(111, 130, 104, 0.08);
+  color: #526a4c;
+  font-size: 1.05cqw;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  white-space: normal;
+  flex-wrap: wrap;
+}
+
+.id-card__status .status-dot {
+  width: 0.9cqw;
+  height: 0.9cqw;
+  box-shadow: 0 0 0 0.3cqw rgba(111, 155, 109, 0.14);
+}
+
+.id-card__status-zh {
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.id-card__qr {
+  min-width: 0;
+}
+
+.qr-unavailable {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px dashed var(--line-strong);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 10px;
+  text-align: center;
+}
+
+/* ---------- V2: Lost Mode ---------- */
+.lost-call {
+  min-height: clamp(96px, 12vw, 124px);
+}
+
+.lost-call__text strong {
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+}
+
+.lost-call__text span {
+  font-size: clamp(14px, 1.5vw, 16px);
+  margin-top: 2px;
+}
+
+.lost-call__number {
+  font-size: clamp(15px, 1.8vw, 19px);
+}
+
+.lost-panel h2 {
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+}
+
+.lost-panel h2 span {
+  font-size: 0.78em;
+}
+
+.lost-medical {
+  margin-top: 18px;
+}
+
+.lost-medical > div {
+  grid-template-columns: minmax(150px, 0.34fr) minmax(0, 0.66fr);
+  align-items: start;
+  gap: 22px;
+  padding-block: 16px;
+}
+
+.lost-medical__label strong {
+  display: block;
+  color: var(--ink);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.lost-medical__label span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted-soft);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.lost-medical__value {
+  color: var(--ink-2);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.lost-medical__en {
+  display: block;
+}
+
+.lost-medical__zh {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.lost-instruction__en {
+  font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+  line-height: 1.65;
+}
+
+.lost-instruction__zh {
+  font-size: clamp(0.98rem, 1.45vw, 1.1rem);
+  line-height: 1.8;
+}
+
+.lost-info__value {
+  line-height: 1.45;
+}
+
+/* ---------- V2: Create form ---------- */
+.input-group {
+  display: flex;
+  gap: 8px;
+}
+
+.input-group .input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.input-group__select {
+  flex: 0 0 auto;
+  width: 86px;
+  padding-right: 28px;
+  background-position: right 10px center;
+}
+
+.crop-controls {
+  display: grid;
+  gap: 11px;
+  margin-top: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.crop-controls__head {
+  display: grid;
+  gap: 2px;
+}
+
+.crop-controls__head strong {
+  color: var(--ink-2);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.crop-controls__head span {
+  color: var(--muted-soft);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.crop-control {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 10.5px;
+}
+
+.crop-control input[type="range"] {
+  width: 100%;
+  accent-color: var(--clay);
+  cursor: pointer;
+}
+
+.upload__preview img {
+  width: 92px;
+  height: 108px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
+.preview-card__photo {
+  aspect-ratio: 1 / 1.18;
+}
+
+.form-privacy-panel {
+  display: grid;
+  gap: 16px;
+  margin-top: 10px;
+  padding: clamp(18px, 2.4vw, 24px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+.form-privacy-panel__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.form-privacy-panel__icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: rgba(111, 130, 104, 0.12);
+  color: var(--sage);
+}
+
+.form-privacy-panel__icon .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.form-privacy-panel__head h2 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.form-privacy-panel__head p {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.privacy-lists {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.privacy-list {
+  padding: 14px 15px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.privacy-list--public {
+  border-color: rgba(111, 130, 104, 0.28);
+  background: rgba(111, 130, 104, 0.05);
+}
+
+.privacy-list h3 {
+  color: var(--ink-2);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.privacy-list ul {
+  display: grid;
+  gap: 4px;
+  margin-top: 9px;
+}
+
+.privacy-list li {
+  position: relative;
+  padding-left: 13px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.privacy-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.privacy-list--private li::before {
+  background: var(--muted-soft);
+}
+
+.form-privacy-panel__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  color: var(--muted-soft);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.form-privacy-panel__note .icon {
+  width: 13px;
+  height: 13px;
+  margin-top: 1px;
+  flex: 0 0 auto;
+  color: var(--sage);
+}
+
+.id-modal__actions {
+  flex-wrap: wrap;
 }
 
 /* ---------- Responsive ---------- */
@@ -5771,6 +6276,90 @@ select.input {
 
   .footer-brand {
     grid-column: auto;
+  }
+}
+
+/* ---------- V2 responsive refinements ---------- */
+@media (max-width: 680px) {
+  .lost-call {
+    min-height: 108px;
+    padding: 18px;
+  }
+
+  .lost-call__text strong {
+    font-size: 1.4rem;
+  }
+
+  .lost-medical > div {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding-block: 15px;
+  }
+
+  .lost-medical__label span {
+    display: inline;
+    margin-left: 6px;
+  }
+
+  .lost-medical__value {
+    font-size: 13.5px;
+  }
+
+  .lost-medical__zh {
+    font-size: 12.5px;
+  }
+
+  .privacy-lists {
+    grid-template-columns: 1fr;
+  }
+
+  .crop-control {
+    grid-template-columns: 80px minmax(0, 1fr);
+  }
+
+  .id-card__status {
+    gap: 0.8cqw;
+    padding: 0.8cqw 1.4cqw;
+    font-size: 1.5cqw;
+    line-height: 1.35;
+  }
+
+  .id-card__status .status-dot {
+    width: 1.2cqw;
+    height: 1.2cqw;
+    flex: 0 0 auto;
+  }
+
+  .id-card__location .id-card__value {
+    font-size: 2.25cqw;
+  }
+
+  .id-card__number .id-card__value {
+    font-size: 2.4cqw;
+  }
+
+  .id-modal__actions [data-close-overlay] {
+    grid-column: 1 / -1;
+  }
+
+  .stat-card__label {
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (max-width: 440px) {
+  .lost-call__icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .lost-call__text strong {
+    font-size: 1.25rem;
+  }
+
+  .lost-call__number {
+    font-size: 15px;
   }
 }
 

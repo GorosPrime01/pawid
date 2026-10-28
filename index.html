@@ -78,7 +78,7 @@
             </a>
           </div>
           <div class="hero-notes">
-            <span><svg class="icon"><use href="#i-check"></use></svg><span data-i18n="hero.note1">Australian owned</span></span>
+            <span><svg class="icon"><use href="#i-check"></use></svg><span data-i18n="hero.note1">Designed for pet families in Australia</span></span>
             <span><svg class="icon"><use href="#i-globe"></use></svg><span data-i18n="hero.note2">English + 中文</span></span>
             <span><svg class="icon"><use href="#i-shield-check"></use></svg><span data-i18n="hero.note3">Privacy-first</span></span>
           </div>
@@ -91,7 +91,7 @@
               <img src="images/ice-1-web.jpg" alt="ICE, a German Shepherd, looking at the camera" data-i18n-alt="hero.photoAlt">
             </div>
           </div>
-          <span class="hero-status"><span class="status-dot"></span><span data-i18n="hero.status">ID active</span></span>
+          <span class="hero-status"><span class="status-dot"></span><span data-i18n="hero.status">PawID Active</span></span>
 
           <div class="hero-id">
             <div class="hero-id__top">
@@ -104,16 +104,16 @@
                 <div class="hero-id__name">ICE</div>
                 <div class="hero-id__breed" data-i18n="hero.idBreed">German Shepherd · 6</div>
               </div>
-              <div class="hero-id__qr" data-qr="PAW-ICE-001"></div>
+              <div class="hero-id__qr" data-qr="pet.html?id=ice&amp;mode=lost"></div>
             </div>
             <div class="hero-id__bottom">
               <span>PAW-ICE-001</span>
-              <span data-i18n="hero.idStatus">Verified</span>
+              <span data-i18n="hero.idStatus">PawID Active</span>
             </div>
           </div>
 
           <div class="hero-tag">
-            <div class="hero-tag__qr" data-qr="PAWID-TAG"></div>
+            <div class="hero-tag__qr" data-qr="pets.html"></div>
             <span class="hero-tag__label">PAWID · <span data-i18n="hero.tagScan">Scan me</span></span>
           </div>
         </div>
@@ -126,8 +126,8 @@
         <span class="trust-item"><svg class="icon"><use href="#i-id-card"></use></svg><span data-i18n="trust.1">Digital pet identity</span></span>
         <span class="trust-item"><svg class="icon"><use href="#i-qr"></use></svg><span data-i18n="trust.2">QR lost pet tag</span></span>
         <span class="trust-item"><svg class="icon"><use href="#i-phone"></use></svg><span data-i18n="trust.3">Emergency contact</span></span>
-        <span class="trust-item"><svg class="icon"><use href="#i-medical"></use></svg><span data-i18n="trust.4">Medical notes</span></span>
-        <span class="trust-item"><svg class="icon"><use href="#i-globe"></use></svg><span data-i18n="trust.5">Bilingual by design</span></span>
+        <span class="trust-item"><svg class="icon"><use href="#i-medical"></use></svg><span data-i18n="trust.4">Health &amp; medical information</span></span>
+        <span class="trust-item"><svg class="icon"><use href="#i-globe"></use></svg><span data-i18n="trust.5">English and Chinese support</span></span>
       </div>
     </div>
 
@@ -286,9 +286,9 @@
             <div class="tag-float tag-float--two"><svg class="icon"><use href="#i-qr"></use></svg><span data-i18n="tag.float2">No app needed</span></div>
             <div class="paw-tag">
               <div class="paw-tag__top"><svg class="icon icon--paw"><use href="#i-paw"></use></svg>PawID</div>
-              <div class="paw-tag__qr" data-qr="PAWID-DEMO-TAG"></div>
+              <div class="paw-tag__qr" data-qr="pets.html"></div>
               <div class="paw-tag__label" data-i18n="tag.tagline">If found, scan me</div>
-              <div class="paw-tag__number">PAWID · <span data-i18n="tag.tagSub">Protected</span></div>
+              <div class="paw-tag__number">PAWID · <span data-i18n="tag.tagSub">PawID Active</span></div>
             </div>
             <div class="tag-shadow"></div>
           </div>
@@ -369,7 +369,7 @@
         <div>
           <h3 class="footer-title" data-i18n="footer.safety">Safety</h3>
           <div class="footer-links">
-            <a href="pet.html?id=ice&amp;lost=1" data-i18n="footer.lostGuide">Lost Mode guide</a>
+            <a href="pet.html?id=ice&amp;mode=lost" data-i18n="footer.lostGuide">Lost Mode guide</a>
             <a href="#tag" data-i18n="footer.qrTag">The QR tag</a>
             <a href="#privacy" data-i18n="footer.privacy">Privacy promise</a>
           </div>
@@ -394,6 +394,7 @@
   <div id="lost-root" hidden></div>
   <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
 
+  <script src="vendor/qrcode.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

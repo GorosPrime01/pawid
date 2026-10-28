@@ -140,8 +140,14 @@
                   </select>
                 </div>
                 <div class="field">
-                  <label class="field__label" for="birthday" data-i18n="form.birthday">Birthday / Age</label>
-                  <input class="input" id="birthday" name="birthday" type="text" autocomplete="off" data-i18n-placeholder="form.birthdayPlaceholder" placeholder="e.g. 14 Mar 2021 or 4 years">
+                  <label class="field__label" for="birthday" data-i18n="form.birthday">Birthday (optional)</label>
+                  <input class="input" id="birthday" name="birthday" type="date" autocomplete="off">
+                  <p class="field__hint" data-i18n="form.birthdayHint">Leave blank if you don't know the exact date.</p>
+
+                </div>
+                <div class="field">
+                  <label class="field__label" for="age" data-i18n="form.age">Age, if birthday is unknown</label>
+                  <input class="input" id="age" name="age" type="text" autocomplete="off" data-i18n-placeholder="form.agePlaceholder" placeholder="e.g. 4 years">
                 </div>
                 <div class="field">
                   <label class="field__label" for="colour" data-i18n="form.colour">Colour</label>
@@ -149,14 +155,20 @@
                 </div>
                 <div class="field">
                   <label class="field__label" for="weight" data-i18n="form.weight">Weight</label>
-                  <input class="input" id="weight" name="weight" type="text" inputmode="decimal" autocomplete="off" data-i18n-placeholder="form.weightPlaceholder" placeholder="e.g. 12 kg">
+                  <div class="input-group">
+                    <input class="input" id="weight" name="weight" type="text" inputmode="decimal" autocomplete="off" data-i18n-placeholder="form.weightPlaceholder" placeholder="e.g. 12">
+                    <select class="input input-group__select" id="weight-unit" name="weightUnit" aria-label="Weight unit / 体重单位" data-i18n-aria-label="form.weightUnitAria">
+                      <option value="kg" selected data-i18n="form.kg">kg</option>
+                      <option value="lb" data-i18n="form.lb">lb</option>
+                    </select>
+                  </div>
                 </div>
                 <div class="field">
                   <label class="field__label" for="sterilised" data-i18n="form.sterilised">Sterilised</label>
                   <select class="input" id="sterilised" name="sterilised">
                     <option value="yes" data-i18n="form.sterYes">Yes</option>
                     <option value="no" data-i18n="form.sterNo">No</option>
-                    <option value="unsure" selected data-i18n="form.sterUnsure">Not sure</option>
+                    <option value="unknown" selected data-i18n="form.sterUnsure">Unknown</option>
                   </select>
                 </div>
               </div>
@@ -212,12 +224,14 @@
               </div>
               <div class="field-grid">
                 <div class="field">
-                  <label class="field__label" for="owner-name" data-i18n="form.ownerName">Owner Name</label>
+                  <label class="field__label" for="owner-name" data-i18n="form.ownerName">Owner Name (optional / private)</label>
                   <input class="input" id="owner-name" name="ownerName" type="text" autocomplete="name" data-i18n-placeholder="form.ownerNamePlaceholder" placeholder="e.g. Alex Chen">
+                  <p class="field__hint" data-i18n="form.ownerNameHint">Your personal name is never shown on the public rescue profile.</p>
                 </div>
                 <div class="field">
                   <label class="field__label" for="owner-phone"><span data-i18n="form.ownerPhone">Owner Phone</span><span class="req" aria-hidden="true">*</span></label>
-                  <input class="input" id="owner-phone" name="ownerPhone" type="tel" autocomplete="tel" required aria-required="true" data-i18n-placeholder="form.phonePlaceholder" placeholder="e.g. 04 1234 5678">
+                  <input class="input" id="owner-phone" name="ownerPhone" type="tel" autocomplete="tel" required aria-required="true" data-i18n-placeholder="form.phonePlaceholder" placeholder="e.g. 0412 345 678">
+                  <p class="field__hint" data-i18n="form.phoneHint">Australian mobile number — used only for the Call Owner button.</p>
                   <p class="field__error" id="error-phone" role="alert" hidden></p>
                 </div>
                 <div class="field">
@@ -226,7 +240,8 @@
                 </div>
                 <div class="field">
                   <label class="field__label" for="suburb" data-i18n="form.suburb">Suburb</label>
-                  <input class="input" id="suburb" name="suburb" type="text" autocomplete="address-level2" data-i18n-placeholder="form.suburbPlaceholder" placeholder="e.g. Chatswood, NSW">
+                  <input class="input" id="suburb" name="suburb" type="text" autocomplete="address-level2" data-i18n-placeholder="form.suburbPlaceholder" placeholder="Chatswood, NSW">
+                  <p class="field__hint" data-i18n="form.suburbHint">Suburb only — please don't enter a full street address.</p>
                 </div>
               </div>
             </fieldset>
@@ -256,10 +271,61 @@
                     </div>
                     <button class="btn btn--soft btn--sm" type="button" id="remove-photo" data-i18n="form.removePhoto">Remove photo</button>
                   </div>
+                  <div class="crop-controls" id="crop-controls" hidden>
+                    <div class="crop-controls__head">
+                      <strong data-i18n="form.photoPosition">Photo position</strong>
+                      <span data-i18n="form.photoPositionHint">Adjust how the photo is cropped on the ID card. Your original image is kept unchanged.</span>
+                    </div>
+                    <label class="crop-control">
+                      <span data-i18n="form.horizontal">Horizontal</span>
+                      <input type="range" id="photo-x" min="0" max="100" value="50" step="1" data-i18n-aria-label="form.horizontal">
+                    </label>
+                    <label class="crop-control">
+                      <span data-i18n="form.vertical">Vertical</span>
+                      <input type="range" id="photo-y" min="0" max="100" value="30" step="1" data-i18n-aria-label="form.vertical">
+                    </label>
+                  </div>
                 </div>
                 <p class="field__error" id="error-photo" role="alert" hidden></p>
               </div>
             </fieldset>
+
+            <section class="form-privacy-panel" aria-labelledby="form-privacy-title">
+              <div class="form-privacy-panel__head">
+                <span class="form-privacy-panel__icon"><svg class="icon"><use href="#i-lock"></use></svg></span>
+                <div>
+                  <h2 id="form-privacy-title" data-i18n="create.privacyTitle">What rescuers can see</h2>
+                  <p data-i18n="create.privacyIntro">PawID is privacy-first. Only the information needed to help your pet get home is shown.</p>
+                </div>
+              </div>
+              <div class="privacy-lists">
+                <div class="privacy-list privacy-list--public">
+                  <h3 data-i18n="privacyList.publicTitle">PUBLIC RESCUE INFORMATION</h3>
+                  <ul>
+                    <li data-i18n="privacyList.public1">Pet name</li>
+                    <li data-i18n="privacyList.public2">Pet photo</li>
+                    <li data-i18n="privacyList.public3">Breed and approximate age</li>
+                    <li data-i18n="privacyList.public4">Suburb</li>
+                    <li data-i18n="privacyList.public5">Lost pet instructions</li>
+                    <li data-i18n="privacyList.public6">Important emergency medical information</li>
+                    <li data-i18n="privacyList.public7">Contact Owner button</li>
+                  </ul>
+                </div>
+                <div class="privacy-list privacy-list--private">
+                  <h3 data-i18n="privacyList.privateTitle">PRIVATE OWNER INFORMATION</h3>
+                  <ul>
+                    <li data-i18n="privacyList.private1">Full home address</li>
+                    <li data-i18n="privacyList.private2">Microchip number</li>
+                    <li data-i18n="privacyList.private3">Private personal identity information</li>
+                    <li data-i18n="privacyList.private4">Unnecessary owner details</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="form-privacy-panel__note">
+                <svg class="icon"><use href="#i-shield-check"></use></svg>
+                <span data-i18n="create.privacyNoAddress">This prototype never asks for your full home address or microchip number.</span>
+              </p>
+            </section>
 
             <div class="form-actions">
               <button class="btn btn--primary" type="submit">
@@ -328,7 +394,7 @@
         <div>
           <h3 class="footer-title" data-i18n="footer.safety">Safety</h3>
           <div class="footer-links">
-            <a href="pet.html?id=ice&amp;lost=1" data-i18n="footer.lostGuide">Lost Mode guide</a>
+            <a href="pet.html?id=ice&amp;mode=lost" data-i18n="footer.lostGuide">Lost Mode guide</a>
             <a href="index.html#tag" data-i18n="footer.qrTag">The QR tag</a>
             <a href="index.html#privacy" data-i18n="footer.privacy">Privacy promise</a>
           </div>
@@ -353,6 +419,7 @@
   <div id="lost-root" hidden></div>
   <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
 
+  <script src="vendor/qrcode.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

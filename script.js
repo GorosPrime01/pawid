@@ -52,7 +52,7 @@
       colour: bi("Brown / Tan", "棕黄色"),
       weight: bi("65 kg", "65 公斤"),
       sterilised: bi("Yes", "已绝育"),
-      location: bi("West Pymble, NSW", "新南威尔士州 · West Pymble"),
+      location: bi("West Pymble, NSW", "West Pymble, NSW"),
       personality: bi(
         "Friendly, a little shy, and loves playing with balls.",
         "亲人、有一点胆小，也很喜欢玩球。"
@@ -72,7 +72,7 @@
         "Please approach her gently and calmly.",
         "请温柔、慢慢地靠近她，不要吓到她。"
       ),
-      owner: bi("Demo owner", "演示主人"),
+      owner: bi("Demo contact", "演示联系方式"),
       phone: "04 1111 1111",
       emergencyPhone: "04 1111 1111",
       photos: [
@@ -105,7 +105,7 @@
       colour: bi("Brown and Black", "棕黑色"),
       weight: bi("60 kg", "60 公斤"),
       sterilised: bi("Yes", "已绝育"),
-      location: bi("West Pymble, NSW", "新南威尔士州 · West Pymble"),
+      location: bi("West Pymble, NSW", "West Pymble, NSW"),
       personality: bi(
         "Friendly, vocal, playful, and loves balls.",
         "亲人、比较爱叫、喜欢玩，也很喜欢球。"
@@ -125,7 +125,7 @@
         "She may bark at you, but please do not be afraid. Approach her calmly and gently.",
         "她可能会对你叫，但是请不要害怕，请保持冷静并温柔地靠近她。"
       ),
-      owner: bi("Demo owner", "演示主人"),
+      owner: bi("Demo contact", "演示联系方式"),
       phone: "04 1111 1111",
       emergencyPhone: "04 1111 1111",
       photos: [
@@ -161,7 +161,7 @@
       ),
       weight: bi("10 kg", "10 公斤"),
       sterilised: bi("Yes", "已绝育"),
-      location: bi("Padstow, NSW", "新南威尔士州 · Padstow"),
+      location: bi("Padstow, NSW", "Padstow, NSW"),
       personality: bi(
         "Calm, slightly aloof, shy, and gentle.",
         "有一点高冷和胆小，但性格温柔。"
@@ -178,7 +178,7 @@
         "Please do not scare her. Approach slowly and gently.",
         "请不要吓她，请慢慢地、温柔地靠近她。"
       ),
-      owner: bi("Demo owner", "演示主人"),
+      owner: bi("Demo contact", "演示联系方式"),
       phone: "04 2222 2222",
       emergencyPhone: "04 2222 2222",
       photos: [
@@ -219,7 +219,8 @@
   var STERILISED_OPTIONS = [
     { value: "yes", en: "Yes", zh: "已绝育" },
     { value: "no", en: "No", zh: "未绝育" },
-    { value: "unsure", en: "Not sure", zh: "不确定" }
+    { value: "unknown", en: "Unknown", zh: "不确定" },
+    { value: "unsure", en: "Unknown", zh: "不确定" }
   ];
 
   /* ------------------------------------------------------------------------
@@ -252,8 +253,8 @@
       "common.digitalId": "Digital ID",
       "common.lostMode": "Lost Mode",
       "common.callOwner": "Call Owner",
-      "common.idActive": "ID active",
-      "common.protected": "Protected",
+      "common.idActive": "PawID Active",
+      "common.protected": "PawID Active",
       "common.notProvided": "Not provided",
       "common.close": "Close",
 
@@ -263,22 +264,22 @@
       "hero.sub": "Create a digital identity for your pet and make their important information easier to access when it matters most.",
       "hero.primary": "Create a Pet ID",
       "hero.secondary": "Meet Our Pets",
-      "hero.note1": "Australian owned",
+      "hero.note1": "Designed for pet families in Australia",
       "hero.note2": "English + 中文",
       "hero.note3": "Privacy-first",
       "hero.photoAlt": "ICE, a German Shepherd, looking at the camera",
       "hero.idLabel": "Live digital ID",
-      "hero.idStatus": "Verified",
+      "hero.idStatus": "PawID Active",
       "hero.idBreed": "German Shepherd · 6",
       "hero.tagScan": "Scan me",
-      "hero.status": "ID active",
+      "hero.status": "PawID Active",
       "aria.skip": "Skip to content",
 
       "trust.1": "Digital pet identity",
       "trust.2": "QR lost pet tag",
       "trust.3": "Emergency contact",
-      "trust.4": "Medical notes",
-      "trust.5": "Bilingual by design",
+      "trust.4": "Health & medical information",
+      "trust.5": "English and Chinese support",
 
       "how.eyebrow": "How PawID works",
       "how.title": "From profile to a safe way home.",
@@ -331,7 +332,7 @@
       "tag.3.text": "Only the information needed to help them home is shared.",
       "tag.cta": "Join the tag waitlist",
       "tag.tagline": "If found, scan me",
-      "tag.tagSub": "Protected",
+      "tag.tagSub": "PawID Active",
       "tag.float1": "Works with any phone",
       "tag.float2": "No app needed",
 
@@ -370,10 +371,10 @@
       "pets.title": "My Pets",
       "pets.lede": "Manage profiles, open digital IDs and switch on Lost Mode when it matters.",
       "pets.add": "Add a pet",
-      "pets.stat1": "Pets protected",
-      "pets.stat2": "Digital IDs ready",
-      "pets.stat3": "Safety information",
-      "pets.stat3Value": "Bilingual",
+      "pets.stat1": "Pet Profiles",
+      "pets.stat2": "Digital IDs",
+      "pets.stat3": "Bilingual Safety Info",
+      "pets.stat3Value": "EN · 中文",
       "pets.filterAll": "All pets",
       "pets.filterDogs": "Dogs",
       "pets.filterCats": "Cats",
@@ -391,7 +392,7 @@
 
       "pet.eyebrow": "Digital pet passport",
       "pet.back": "Back to My Pets",
-      "pet.active": "ID active",
+      "pet.active": "PawID Active",
       "pet.idLabel": "PawID number",
       "pet.identityTitle": "Identity",
       "pet.personalityTitle": "Personality",
@@ -407,7 +408,7 @@
       "pet.digitalIdTitle": "Digital ID card",
       "pet.digitalIdBody": "A printable identity card with a unique PawID number and QR code.",
       "pet.openId": "Open Digital ID",
-      "pet.print": "Print / Save as PDF",
+      "pet.print": "Print ID Card",
       "pet.callOwner": "Call Owner",
       "pet.lostMode": "Lost Mode",
       "pet.digitalId": "Digital ID",
@@ -415,10 +416,15 @@
       "pet.photoLifestyle": "Lifestyle",
       "pet.viewPhoto": "View photo",
       "pet.privacyTitle": "What a finder can see",
-      "pet.publicInfo": "Public rescue information",
-      "pet.publicDesc": "Name, photo, breed, location, lost instructions and a contact number.",
-      "pet.privateInfo": "Kept private",
-      "pet.privateDesc": "Home address, microchip number and personal documents are never shown.",
+      "pet.publicInfo": "PUBLIC RESCUE INFORMATION",
+      "pet.publicDesc": "Only what is needed to recognise your pet and contact you.",
+      "pet.privateInfo": "PRIVATE OWNER INFORMATION",
+      "pet.privateDesc": "Kept out of the public rescue view.",
+      "pet.privateOwnerNote": "Private owner information — shown only in this profile, never in Lost Mode.",
+      "pet.ownerPrivate": "Optional / private",
+      "pet.birthday": "Birthday",
+      "pet.rescueHeading": "Rescue view",
+      "pet.ownerHeading": "Owner view",
       "pet.notFoundTitle": "We couldn't find that pet.",
       "pet.notFoundBody": "The profile may have been removed, or the link may be incorrect.",
       "pet.notFoundCta": "Go to My Pets",
@@ -446,10 +452,16 @@
       "id.sex": "Sex",
       "id.location": "Location",
       "id.number": "PawID no.",
-      "id.foot": "If found, please contact the owner.",
-      "id.print": "Print card",
+      "id.foot": "If found, please scan this code or contact the owner.",
+      "id.print": "Print ID Card",
+      "id.download": "Download ID Card",
       "id.close": "Close",
       "id.cardAria": "Digital identity card for",
+      "id.status": "PawID Active",
+      "id.statusZh": "PawID 已启用",
+      "id.scan": "SCAN IF FOUND",
+      "id.scanZh": "发现宠物请扫码",
+      "id.qrAria": "QR code — scan to open this pet's Lost Mode",
 
       "create.eyebrow": "Create a Pet ID",
       "create.title": "Start their identity.",
@@ -472,6 +484,9 @@
       "create.section4Desc": "A clear, friendly photo helps a finder recognise them instantly.",
       "create.required": "* Required fields",
       "create.privacyNote": "Only safety information is shown on the public profile.",
+      "create.privacyTitle": "What rescuers can see",
+      "create.privacyIntro": "PawID is privacy-first. Only the information needed to help your pet get home is shown on the public rescue profile.",
+      "create.privacyNoAddress": "This prototype never asks for your full home address or microchip number.",
       "create.submit": "Create Pet ID",
       "create.cancel": "Cancel",
       "create.successEyebrow": "Profile created",
@@ -492,16 +507,22 @@
       "form.genderFemale": "Female",
       "form.genderMale": "Male",
       "form.genderUnknown": "Unknown",
-      "form.birthday": "Birthday / Age",
-      "form.birthdayPlaceholder": "e.g. 14 Mar 2021 or 4 years",
+      "form.birthday": "Birthday (optional)",
+      "form.birthdayHint": "Leave blank if you don't know the exact date.",
+      "form.birthdayPlaceholder": "e.g. 14 Mar 2021",
+      "form.age": "Age, if birthday is unknown",
+      "form.agePlaceholder": "e.g. 4 years",
       "form.colour": "Colour",
       "form.colourPlaceholder": "e.g. Brown / Tan",
       "form.weight": "Weight",
-      "form.weightPlaceholder": "e.g. 12 kg",
+      "form.weightPlaceholder": "e.g. 12",
+      "form.weightUnitAria": "Weight unit",
+      "form.kg": "kg",
+      "form.lb": "lb",
       "form.sterilised": "Sterilised",
       "form.sterYes": "Yes",
       "form.sterNo": "No",
-      "form.sterUnsure": "Not sure",
+      "form.sterUnsure": "Unknown",
       "form.personality": "Personality",
       "form.personalityPlaceholder": "How would you describe them?",
       "form.favFood": "Favourite Food",
@@ -516,20 +537,27 @@
       "form.carePlaceholder": "Anything a carer should know?",
       "form.lost": "Lost Pet Instructions",
       "form.lostPlaceholder": "How should someone approach your pet if they are lost?",
-      "form.ownerName": "Owner Name",
+      "form.ownerName": "Owner Name (optional / private)",
       "form.ownerNamePlaceholder": "e.g. Alex Chen",
+      "form.ownerNameHint": "Your personal name is never shown on the public rescue profile.",
       "form.ownerPhone": "Owner Phone",
-      "form.phonePlaceholder": "e.g. 04 1234 5678",
+      "form.phonePlaceholder": "e.g. 0412 345 678",
+      "form.phoneHint": "Australian mobile number — used only for the Call Owner button.",
       "form.emergency": "Emergency Contact",
       "form.emergencyPlaceholder": "A second number if available",
       "form.suburb": "Suburb",
-      "form.suburbPlaceholder": "e.g. Chatswood, NSW",
+      "form.suburbPlaceholder": "Chatswood, NSW",
+      "form.suburbHint": "Suburb only — please don't enter a full street address.",
       "form.photo": "Pet Photo",
       "form.photoCta": "Choose a photo",
       "form.photoHint": "JPG or PNG · Optional · Max 12 MB",
       "form.photoReady": "Ready to save",
       "form.removePhoto": "Remove photo",
       "form.changePhoto": "Change photo",
+      "form.photoPosition": "Photo position",
+      "form.photoPositionHint": "Adjust how the photo is cropped on the ID card. Your original image is kept unchanged.",
+      "form.horizontal": "Horizontal",
+      "form.vertical": "Vertical",
 
       "species.dog": "Dog",
       "species.cat": "Cat",
@@ -542,25 +570,41 @@
       "errors.name": "Please enter your pet's name.",
       "errors.type": "Please choose an animal type.",
       "errors.phone": "Please enter a contact number.",
-      "errors.phoneInvalid": "Please enter a valid Australian phone number.",
+      "errors.phoneInvalid": "Please enter a valid Australian mobile number, e.g. 0412 345 678.",
       "errors.photo": "That file could not be read. Please choose a JPG or PNG.",
 
       "toast.created": "PawID created successfully.",
       "toast.waitlist": "You're on the tag waitlist. We'll be in touch.",
       "toast.saveError": "We couldn't save this pet. Try a smaller photo.",
       "toast.photo": "Photo added.",
-      "toast.lightboxHint": "Use the arrow keys to browse photos."
+      "toast.lightboxHint": "Use the arrow keys to browse photos.",
+      "toast.downloaded": "ID card downloaded.",
+      "errors.download": "Couldn't create the download. Please try Print ID Card instead.",
+
+      "privacyList.publicTitle": "PUBLIC RESCUE INFORMATION",
+      "privacyList.public1": "Pet name",
+      "privacyList.public2": "Pet photo",
+      "privacyList.public3": "Breed and approximate age",
+      "privacyList.public4": "Suburb",
+      "privacyList.public5": "Lost pet instructions",
+      "privacyList.public6": "Important emergency medical information",
+      "privacyList.public7": "Contact Owner button",
+      "privacyList.privateTitle": "PRIVATE OWNER INFORMATION",
+      "privacyList.private1": "Full home address",
+      "privacyList.private2": "Microchip number",
+      "privacyList.private3": "Private personal identity information",
+      "privacyList.private4": "Unnecessary owner details"
     },
 
     zh: {
       "meta.homeTitle": "PawID — 每只宠物都值得拥有自己的身份。",
       "meta.petsTitle": "我的宠物 · PawID",
-      "meta.createTitle": "创建宠物身份 · PawID",
+      "meta.createTitle": "创建宠物身份档案 · PawID",
       "meta.description": "PawID 是面向澳大利亚宠物主人的中英双语宠物数字身份与安全平台。",
 
       "nav.home": "首页",
       "nav.pets": "我的宠物",
-      "nav.create": "创建宠物身份",
+      "nav.create": "创建宠物身份档案",
       "nav.how": "如何运作",
 
       "aria.language": "语言",
@@ -578,8 +622,8 @@
       "common.digitalId": "数字身份",
       "common.lostMode": "走失模式",
       "common.callOwner": "联系主人",
-      "common.idActive": "身份有效",
-      "common.protected": "已守护",
+      "common.idActive": "PawID 已启用",
+      "common.protected": "PawID 已启用",
       "common.notProvided": "未填写",
       "common.close": "关闭",
 
@@ -587,24 +631,24 @@
       "hero.titleA": "每只宠物都值得拥有",
       "hero.titleB": "自己的身份。",
       "hero.sub": "为你的宠物创建专属数字身份，在重要时刻让关键信息更容易被找到。",
-      "hero.primary": "创建宠物身份",
-      "hero.secondary": "认识我们的宠物",
-      "hero.note1": "澳洲本地打造",
+      "hero.primary": "创建宠物身份档案",
+      "hero.secondary": "查看宠物档案",
+      "hero.note1": "为澳洲宠物家庭设计",
       "hero.note2": "中英双语",
       "hero.note3": "隐私优先",
       "hero.photoAlt": "ICE，一只德国牧羊犬，正望向镜头",
       "hero.idLabel": "数字身份预览",
-      "hero.idStatus": "已验证",
+      "hero.idStatus": "PawID 已启用",
       "hero.idBreed": "德国牧羊犬 · 6岁",
       "hero.tagScan": "扫码",
-      "hero.status": "身份有效",
+      "hero.status": "PawID 已启用",
       "aria.skip": "跳到主要内容",
 
       "trust.1": "宠物数字身份",
       "trust.2": "二维码寻宠挂牌",
       "trust.3": "紧急联系方式",
-      "trust.4": "医疗照护备注",
-      "trust.5": "原生双语设计",
+      "trust.4": "健康与医疗信息",
+      "trust.5": "中英双语支持",
 
       "how.eyebrow": "PawID 如何运作",
       "how.title": "从一份档案，到一条安全的回家路。",
@@ -657,7 +701,7 @@
       "tag.3.text": "仅分享帮助爱宠回家所需的信息。",
       "tag.cta": "加入挂牌等候名单",
       "tag.tagline": "若发现我，请扫码",
-      "tag.tagSub": "已守护",
+      "tag.tagSub": "PawID 已启用",
       "tag.float1": "支持任何手机",
       "tag.float2": "无需下载应用",
 
@@ -674,7 +718,7 @@
       "cta.eyebrow": "即刻开始",
       "cta.title": "给爱宠一个专属身份。",
       "cta.body": "几分钟即可创建免费数字档案，无需下载应用，简单省心。",
-      "cta.primary": "创建宠物身份",
+      "cta.primary": "创建宠物身份档案",
       "cta.secondary": "浏览我的宠物",
       "cta.note": "演示档案已准备好，欢迎浏览。",
 
@@ -696,10 +740,10 @@
       "pets.title": "我的宠物",
       "pets.lede": "管理爱宠档案、查看数字身份，并在需要时开启走失模式。",
       "pets.add": "添加宠物",
-      "pets.stat1": "已守护宠物",
-      "pets.stat2": "数字身份已生成",
-      "pets.stat3": "安全信息",
-      "pets.stat3Value": "双语",
+      "pets.stat1": "宠物档案",
+      "pets.stat2": "数字 ID",
+      "pets.stat3": "双语安全信息",
+      "pets.stat3Value": "EN · 中文",
       "pets.filterAll": "全部宠物",
       "pets.filterDogs": "狗狗",
       "pets.filterCats": "猫咪",
@@ -717,7 +761,7 @@
 
       "pet.eyebrow": "数字宠物护照",
       "pet.back": "返回我的宠物",
-      "pet.active": "身份有效",
+      "pet.active": "PawID 已启用",
       "pet.idLabel": "PawID 编号",
       "pet.identityTitle": "身份信息",
       "pet.personalityTitle": "性格",
@@ -733,7 +777,7 @@
       "pet.digitalIdTitle": "数字身份卡",
       "pet.digitalIdBody": "可打印的身份卡，包含专属 PawID 编号与二维码。",
       "pet.openId": "打开数字身份卡",
-      "pet.print": "打印 / 保存为 PDF",
+      "pet.print": "打印身份卡",
       "pet.callOwner": "联系主人",
       "pet.lostMode": "走失模式",
       "pet.digitalId": "数字身份",
@@ -741,10 +785,15 @@
       "pet.photoLifestyle": "生活照",
       "pet.viewPhoto": "查看照片",
       "pet.privacyTitle": "拾获者可以看到什么",
-      "pet.publicInfo": "公开的救助信息",
-      "pet.publicDesc": "名字、照片、品种、所在区域、走失指引与联系电话。",
-      "pet.privateInfo": "保留为私人信息",
-      "pet.privateDesc": "住址、芯片号码与个人证件信息不会对外显示。",
+      "pet.publicInfo": "公开救助信息",
+      "pet.publicDesc": "仅展示识别爱宠和联系主人所需的信息。",
+      "pet.privateInfo": "私人主人信息",
+      "pet.privateDesc": "不会出现在公开救助页面。",
+      "pet.privateOwnerNote": "私人主人信息 · 仅在本档案中显示，走失模式中不会公开。",
+      "pet.ownerPrivate": "可选 / 私密信息",
+      "pet.birthday": "生日",
+      "pet.rescueHeading": "救助信息",
+      "pet.ownerHeading": "主人信息",
       "pet.notFoundTitle": "没有找到这只宠物。",
       "pet.notFoundBody": "档案可能已被删除，或者链接有误。",
       "pet.notFoundCta": "前往我的宠物",
@@ -772,12 +821,18 @@
       "id.sex": "性别",
       "id.location": "位置",
       "id.number": "PawID 编号",
-      "id.foot": "如发现走失宠物，请联系主人。",
+      "id.foot": "如发现走失宠物，请扫码或联系主人。",
       "id.print": "打印身份卡",
+      "id.download": "下载身份卡",
       "id.close": "关闭",
       "id.cardAria": "数字身份卡：",
+      "id.status": "PawID Active",
+      "id.statusZh": "PawID 已启用",
+      "id.scan": "SCAN IF FOUND",
+      "id.scanZh": "发现宠物请扫码",
+      "id.qrAria": "二维码 · 扫码打开该宠物的走失模式",
 
-      "create.eyebrow": "创建宠物身份",
+      "create.eyebrow": "创建宠物身份档案",
       "create.title": "为爱宠建立专属身份。",
       "create.lede": "现在花几分钟填写资料，关键时刻可能很重要。之后可随时修改。",
       "create.previewLabel": "实时预览",
@@ -798,7 +853,10 @@
       "create.section4Desc": "一张清晰亲切的照片，能帮助拾获者立即认出爱宠。",
       "create.required": "* 为必填项",
       "create.privacyNote": "公开档案仅显示安全相关信息。",
-      "create.submit": "创建宠物身份",
+      "create.privacyTitle": "拾获者可以看到什么",
+      "create.privacyIntro": "PawID 以隐私优先。公开救助档案仅展示帮助爱宠回家所需的信息。",
+      "create.privacyNoAddress": "此原型不会要求填写完整家庭住址或芯片号码。",
+      "create.submit": "创建宠物身份档案",
       "create.cancel": "取消",
       "create.successEyebrow": "档案已创建",
       "create.successTitle": "爱宠的 PawID 已创建。",
@@ -818,12 +876,18 @@
       "form.genderFemale": "母",
       "form.genderMale": "公",
       "form.genderUnknown": "未知",
-      "form.birthday": "生日 / 年龄",
-      "form.birthdayPlaceholder": "例如：2021年3月14日 或 4岁",
+      "form.birthday": "生日（可选）",
+      "form.birthdayHint": "如果不知道确切日期，可以留空。",
+      "form.birthdayPlaceholder": "例如：2021年3月14日",
+      "form.age": "年龄（如不知道生日）",
+      "form.agePlaceholder": "例如：4岁",
       "form.colour": "毛色",
       "form.colourPlaceholder": "例如：棕黄色",
       "form.weight": "体重",
-      "form.weightPlaceholder": "例如：12 公斤",
+      "form.weightPlaceholder": "例如：12",
+      "form.weightUnitAria": "体重单位",
+      "form.kg": "公斤",
+      "form.lb": "磅",
       "form.sterilised": "绝育情况",
       "form.sterYes": "已绝育",
       "form.sterNo": "未绝育",
@@ -842,20 +906,27 @@
       "form.carePlaceholder": "照顾爱宠时需要留意的事项。",
       "form.lost": "走失指引",
       "form.lostPlaceholder": "如果爱宠走失，拾获者应如何靠近它？",
-      "form.ownerName": "主人姓名",
+      "form.ownerName": "主人姓名（可选 / 私密信息）",
       "form.ownerNamePlaceholder": "例如：陈先生",
+      "form.ownerNameHint": "主人的个人姓名不会显示在公开救助档案上。",
       "form.ownerPhone": "主人电话",
-      "form.phonePlaceholder": "例如：04 1234 5678",
+      "form.phonePlaceholder": "例如：0412 345 678",
+      "form.phoneHint": "澳大利亚手机号码，仅用于“联系主人”按钮。",
       "form.emergency": "紧急联系人",
       "form.emergencyPlaceholder": "如有第二个号码，请填写",
-      "form.suburb": "所在区域",
-      "form.suburbPlaceholder": "例如：Chatswood, NSW",
+      "form.suburb": "所在城区",
+      "form.suburbPlaceholder": "Chatswood, NSW",
+      "form.suburbHint": "只需填写城区，请勿填写详细住址。",
       "form.photo": "宠物照片",
       "form.photoCta": "选择照片",
       "form.photoHint": "JPG 或 PNG · 可选 · 最大 12 MB",
       "form.photoReady": "准备保存",
       "form.removePhoto": "移除照片",
       "form.changePhoto": "更换照片",
+      "form.photoPosition": "照片位置",
+      "form.photoPositionHint": "调整照片在身份卡上的裁剪位置，原始照片不会被修改。",
+      "form.horizontal": "水平位置",
+      "form.vertical": "垂直位置",
 
       "species.dog": "狗",
       "species.cat": "猫",
@@ -868,14 +939,30 @@
       "errors.name": "请输入宠物名字。",
       "errors.type": "请选择动物类型。",
       "errors.phone": "请输入联系电话。",
-      "errors.phoneInvalid": "请输入有效的澳大利亚电话号码。",
+      "errors.phoneInvalid": "请输入有效的澳大利亚手机号码，例如：0412 345 678。",
       "errors.photo": "无法读取该文件，请选择 JPG 或 PNG 图片。",
 
       "toast.created": "PawID 创建成功。",
       "toast.waitlist": "你已加入挂牌等候名单，我们会尽快联系你。",
       "toast.saveError": "保存失败，请尝试使用较小的照片。",
       "toast.photo": "照片已添加。",
-      "toast.lightboxHint": "可使用方向键浏览照片。"
+      "toast.lightboxHint": "可使用方向键浏览照片。",
+      "toast.downloaded": "身份卡已下载。",
+      "errors.download": "无法生成下载文件，请尝试使用“打印身份卡”。",
+
+      "privacyList.publicTitle": "公开救助信息",
+      "privacyList.public1": "宠物名字",
+      "privacyList.public2": "宠物照片",
+      "privacyList.public3": "品种与大约年龄",
+      "privacyList.public4": "所在城区",
+      "privacyList.public5": "走失指引",
+      "privacyList.public6": "重要紧急医疗信息",
+      "privacyList.public7": "联系主人按钮",
+      "privacyList.privateTitle": "私人主人信息",
+      "privacyList.private1": "完整家庭住址",
+      "privacyList.private2": "芯片号码",
+      "privacyList.private3": "私人身份信息",
+      "privacyList.private4": "不必要的个人资料"
     }
   };
 
@@ -893,7 +980,8 @@
     photoData: null,
     lastCreated: null,
     autoOpenedLost: false,
-    previewSerial: 4
+    previewSerial: 4,
+    photoPosition: "50% 30%"
   };
 
   /* ------------------------------------------------------------------------
@@ -915,6 +1003,7 @@
     '<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>' +
     '<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>' +
     '<symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V4h12v5"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M7 14h10v6H7z"/></symbol>' +
+    '<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 20h14"/></symbol>' +
     '<symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V13M12 16.6h.01"/></symbol>' +
     '<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.7-6.5-11A6.5 6.5 0 0 1 18.5 10c0 5.3-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/></symbol>' +
     '<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>' +
@@ -1028,9 +1117,102 @@
     );
   }
 
-  function isStaffordPhone(value) {
+  function isAustralianMobile(value) {
     var digits = String(value || "").replace(/[^\d]/g, "");
-    return /^0[2-478]\d{8}$/.test(digits) || /^61[2-478]\d{8}$/.test(digits);
+    return /^(?:61|0)4\d{8}$/.test(digits);
+  }
+
+  var AU_STATES = ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "ACT", "NT"];
+
+  function normaliseLocation(value) {
+    var text = String(value || "")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (!text) return "";
+
+    text = text
+      .replace(/^新南威尔士州\s*[·•\-|]\s*/u, "")
+      .replace(/^新南威尔士州\s*/u, "NSW")
+      .replace(/\bNew South Wales\b/gi, "NSW")
+      .replace(/\s*[·•]\s*/g, ", ")
+      .replace(/\s*,\s*/g, ", ")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    if (text.length <= 3 && AU_STATES.indexOf(text.toUpperCase()) !== -1) {
+      return text.toUpperCase();
+    }
+
+    var parts = text.split(",");
+    if (parts.length > 1) {
+      var suburb = parts[0].trim();
+      var state = parts[1].trim().toUpperCase();
+      if (suburb && AU_STATES.indexOf(state) !== -1) {
+        return suburb + ", " + state;
+      }
+      return text;
+    }
+
+    var trailing = text.match(/\s(NSW|VIC|QLD|WA|SA|TAS|ACT|NT)$/i);
+    if (trailing) {
+      return text.slice(0, trailing.index).trim() + ", " + trailing[1].toUpperCase();
+    }
+
+    return text + ", NSW";
+  }
+
+  function locationPair(field) {
+    var en = normaliseLocation(rawEn(field));
+    var zh = normaliseLocation(rawZh(field));
+    if (!en) en = zh;
+    if (!zh) zh = en;
+    return bi(en, zh);
+  }
+
+  function formatBirthday(value) {
+    if (!value) return "";
+    var match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!match) return String(value);
+    var months = [
+      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ];
+    var year = match[1];
+    var month = Number(match[2]);
+    var day = Number(match[3]);
+    if (month < 1 || month > 12) return String(value);
+    if (state.lang === "zh") return year + "年" + month + "月" + day + "日";
+    return day + " " + months[month - 1] + " " + year;
+  }
+
+  function agePairFromText(text) {
+    var value = String(text || "").trim();
+    if (!value) return bi("", "");
+    var number = value.match(/(\d+(?:\.\d+)?)/);
+    if (!number) return bi(value, value);
+    var amount = number[1];
+    if (/month|个月|月/iu.test(value)) {
+      return bi(amount + " months old", amount + "个月");
+    }
+    if (/week|周|星期/iu.test(value)) {
+      return bi(amount + " weeks old", amount + "周");
+    }
+    return bi(amount + " years old", amount + "岁");
+  }
+
+  function deriveAge(birthday, ageText) {
+    var entered = String(ageText || "").trim();
+    if (entered) return agePairFromText(entered);
+    if (!birthday) return bi("", "");
+    var born = new Date(birthday + "T00:00:00");
+    if (isNaN(born.getTime())) return bi("", "");
+    var now = new Date();
+    var months = (now.getFullYear() - born.getFullYear()) * 12 + (now.getMonth() - born.getMonth());
+    if (now.getDate() < born.getDate()) months -= 1;
+    if (months < 0) months = 0;
+    if (months < 12) return bi(months + " months old", months + "个月");
+    var years = Math.floor(months / 12);
+    return bi(years + " years old", years + "岁");
   }
 
   /* ------------------------------------------------------------------------
@@ -1048,6 +1230,7 @@
       breed: input.breed && typeof input.breed === "object" ? input.breed : bi(String(input.breed || ""), String(input.breed || "")),
       gender: input.gender && typeof input.gender === "object" ? input.gender : bi("Unknown", "未知"),
       age: input.age && typeof input.age === "object" ? input.age : bi(String(input.age || ""), String(input.age || "")),
+      birthday: input.birthday ? String(input.birthday) : "",
       colour: input.colour && typeof input.colour === "object" ? input.colour : bi(String(input.colour || ""), String(input.colour || "")),
       weight: input.weight && typeof input.weight === "object" ? input.weight : bi(String(input.weight || ""), String(input.weight || "")),
       sterilised: input.sterilised && typeof input.sterilised === "object" ? input.sterilised : bi("Not sure", "不确定"),
@@ -1073,9 +1256,17 @@
         .map(function (photo) {
           return {
             src: photo.src,
-            alt: photo.alt && typeof photo.alt === "object" ? photo.alt : bi("Pet photo", "宠物照片")
+            alt: photo.alt && typeof photo.alt === "object" ? photo.alt : bi("Pet photo", "宠物照片"),
+            position: photo.position || input.photoPosition || ""
           };
         });
+    }
+    pet.location = locationPair(pet.location);
+    if (rawEn(pet.sterilised) === "Not sure") {
+      pet.sterilised = bi("Unknown", "不确定");
+    }
+    if (!rawEn(pet.age) && pet.birthday) {
+      pet.age = deriveAge(pet.birthday, "");
     }
     return pet;
   }
@@ -1109,89 +1300,64 @@
   }
 
   /* ------------------------------------------------------------------------
-     QR placeholder generator (decorative, deterministic)
+     Functional QR codes — every code opens the matching pet's Lost Mode
      ------------------------------------------------------------------------ */
-  var QR_PAW_PATH =
-    "M12 11.1c3.4 0 5.7 2.5 5.7 5.1 0 2.3-2 3.5-5.7 3.5s-5.7-1.2-5.7-3.5c0-2.6 2.3-5.1 5.7-5.1Zm-5-1.9c1.2 0 2.1 1.4 2.1 3s-.9 3-2.1 3-2.1-1.4-2.1-3 .9-3 2.1-3Zm10 0c1.2 0 2.1 1.4 2.1 3s-.9 3-2.1 3-2.1-1.4-2.1-3 .9-3 2.1-3ZM12 3.2c1.4 0 2.5 1.7 2.5 3.7S13.4 10.6 12 10.6s-2.5-1.7-2.5-3.7S10.6 3.2 12 3.2Z";
-
-  function hashSeed(value) {
-    var hash = 2166136261;
-    for (var i = 0; i < value.length; i += 1) {
-      hash ^= value.charCodeAt(i);
-      hash = Math.imul(hash, 16777619);
+  function absoluteUrl(path) {
+    try {
+      return new URL(path, window.location.href).href;
+    } catch (error) {
+      return String(path || "");
     }
-    return hash >>> 0;
   }
 
-  function mulberry32(seed) {
-    var a = seed;
-    return function () {
-      a |= 0;
-      a = (a + 0x6d2b79f5) | 0;
-      var value = Math.imul(a ^ (a >>> 15), 1 | a);
-      value = (value + Math.imul(value ^ (value >>> 7), 61 | value)) ^ value;
-      return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
-    };
+  function petLostUrl(pet) {
+    return absoluteUrl("pet.html?id=" + encodeURIComponent(pet.id) + "&mode=lost");
   }
 
-  function qrSvg(seed) {
-    var modules = 25;
-    var quiet = 2;
+  function petByPetId(petId) {
+    var all = getAllPets();
+    for (var i = 0; i < all.length; i += 1) {
+      if (all[i].petId === petId) return all[i];
+    }
+    return null;
+  }
+
+  function qrDataFor(value) {
+    var raw = String(value || "").trim();
+    if (/^(https?:|file:)/i.test(raw)) return raw;
+    if (/\.html?(?:[?#]|$)/i.test(raw) || raw.indexOf("?") !== -1) return absoluteUrl(raw);
+
+    var pet = getPetById(raw) || petByPetId(raw);
+    if (pet) return petLostUrl(pet);
+
+    return absoluteUrl("index.html");
+  }
+
+  function makeQr(value) {
+    if (typeof window.qrcode !== "function") return null;
+    try {
+      var qr = window.qrcode(0, "M");
+      qr.addData(qrDataFor(value));
+      qr.make();
+      return qr;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function qrSvg(value) {
+    var qr = makeQr(value);
+    if (!qr) {
+      return '<div class="qr-unavailable">QR / 二维码</div>';
+    }
+    var modules = qr.getModuleCount();
+    var quiet = 4;
     var total = modules + quiet * 2;
-    var random = mulberry32(hashSeed(String(seed)));
-    var cells = [];
-    var x;
-    var y;
-
-    for (y = 0; y < modules; y += 1) {
-      cells.push(new Array(modules).fill(0));
-    }
-
-    function isFinderZone(cx, cy) {
-      return (
-        (cx < 8 && cy < 8) ||
-        (cx >= modules - 8 && cy < 8) ||
-        (cx < 8 && cy >= modules - 8)
-      );
-    }
-
-    function drawFinder(originX, originY) {
-      for (var fy = 0; fy < 7; fy += 1) {
-        for (var fx = 0; fx < 7; fx += 1) {
-          var on =
-            fx === 0 ||
-            fx === 6 ||
-            fy === 0 ||
-            fy === 6 ||
-            (fx >= 2 && fx <= 4 && fy >= 2 && fy <= 4);
-          cells[originY + fy][originX + fx] = on ? 1 : 0;
-        }
-      }
-    }
-
-    drawFinder(0, 0);
-    drawFinder(modules - 7, 0);
-    drawFinder(0, modules - 7);
-
-    for (y = 0; y < modules; y += 1) {
-      for (x = 0; x < modules; x += 1) {
-        if (isFinderZone(x, y)) continue;
-        if (x === 6 || y === 6) {
-          cells[y][x] = (x + y) % 2 === 0 ? 1 : 0;
-          continue;
-        }
-        if (x >= 10 && x <= 14 && y >= 10 && y <= 14) {
-          cells[y][x] = 0;
-          continue;
-        }
-        cells[y][x] = random() > 0.53 ? 1 : 0;
-      }
-    }
-
     var path = "";
-    for (y = 0; y < modules; y += 1) {
-      for (x = 0; x < modules; x += 1) {
-        if (cells[y][x]) {
+
+    for (var y = 0; y < modules; y += 1) {
+      for (var x = 0; x < modules; x += 1) {
+        if (qr.isDark(y, x)) {
           path += "M" + (x + quiet) + " " + (y + quiet) + "h1v1h-1z";
         }
       }
@@ -1202,19 +1368,17 @@
       total +
       " " +
       total +
-      '" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" role="img" aria-label="QR code placeholder / 二维码占位图">' +
+      '" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" role="img" aria-label="' +
+      escapeHtml(t("id.qrAria")) +
+      '">' +
       '<rect width="' +
       total +
       '" height="' +
       total +
-      '" fill="#FFFDF8"/>' +
+      '" fill="#FFFFFF"/>' +
       '<path d="' +
       path +
       '" fill="#211C18"/>' +
-      '<circle cx="14.5" cy="14.5" r="3.1" fill="#FFFDF8"/>' +
-      '<path d="' +
-      QR_PAW_PATH +
-      '" transform="translate(11.4 11.6) scale(0.26)" fill="#211C18"/>' +
       "</svg>"
     );
   }
@@ -1311,6 +1475,7 @@
     var alt = photo
       ? val(photo.alt) || display(pet.name) + " " + t("pet.photoLabel")
       : display(pet.name) + " " + t("pet.photoLabel");
+    var position = options.position || (photo && photo.position) || pet.photoPosition || "";
     if (photo && photo.src) {
       return (
         '<img src="' +
@@ -1319,7 +1484,9 @@
         escapeHtml(alt) +
         '" loading="' +
         (options.eager ? "eager" : "lazy") +
-        '" decoding="async">'
+        '" decoding="async"' +
+        (position ? ' style="object-position:' + escapeHtml(position) + '"' : "") +
+        ">"
       );
     }
     return (
@@ -1576,7 +1743,7 @@
       '</span><span class="id-card__value">' +
       escapeHtml(display(pet.gender)) +
       "</span></div>" +
-      '<div><span class="id-card__field-label">' +
+      '<div class="id-card__location"><span class="id-card__field-label">' +
       escapeHtml(t("id.location")) +
       '</span><span class="id-card__value">' +
       escapeHtml(display(pet.location)) +
@@ -1587,10 +1754,19 @@
       '</span><span class="id-card__value">' +
       escapeHtml(pet.petId) +
       "</span></div>" +
+      '<div class="id-card__status"><span class="status-dot"></span><span>' +
+      escapeHtml(t("id.status")) +
+      '</span><span class="id-card__status-zh">' +
+      escapeHtml(t("id.statusZh")) +
+      "</span></div>" +
       "</div>" +
       '<div class="id-card__qr">' +
-      qrSvg(pet.petId) +
-      '<span class="id-card__scan">SCAN IF FOUND<span class="id-card__scan-zh">发现宠物请扫码</span></span>' +
+      qrSvg(pet.id) +
+      '<span class="id-card__scan">' +
+      escapeHtml(t("id.scan")) +
+      '<span class="id-card__scan-zh">' +
+      escapeHtml(t("id.scanZh")) +
+      "</span></span>" +
       "</div>" +
       "</div>" +
       '<footer class="id-card__foot">' +
@@ -1601,6 +1777,389 @@
       "</footer>" +
       "</article>"
     );
+  }
+
+  /* ------------------------------------------------------------------------
+     Download Digital ID Card — lightweight canvas renderer (no libraries)
+     ------------------------------------------------------------------------ */
+  function canvasRoundRect(ctx, x, y, width, height, radius) {
+    var r = Math.min(radius, width / 2, height / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + width, y, x + width, y + height, r);
+    ctx.arcTo(x + width, y + height, x, y + height, r);
+    ctx.arcTo(x, y + height, x, y, r);
+    ctx.arcTo(x, y, x + width, y, r);
+    ctx.closePath();
+  }
+
+  function canvasWrapText(ctx, text, maxWidth, maxLines) {
+    var chars = Array.from(String(text || ""));
+    var lines = [];
+    var line = "";
+    for (var i = 0; i < chars.length; i += 1) {
+      var test = line + chars[i];
+      if (line && ctx.measureText(test).width > maxWidth) {
+        lines.push(line);
+        line = chars[i];
+      } else {
+        line = test;
+      }
+    }
+    if (line) lines.push(line);
+    if (lines.length > maxLines) {
+      lines = lines.slice(0, maxLines);
+      var last = lines[maxLines - 1];
+      while (last.length > 1 && ctx.measureText(last + "…").width > maxWidth) {
+        last = last.slice(0, -1);
+      }
+      lines[maxLines - 1] = last + "…";
+    }
+    return lines;
+  }
+
+  function drawCanvasPaw(ctx, cx, cy, scale, color) {
+    ctx.save();
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.ellipse(cx, cy + scale * 0.32, scale * 0.62, scale * 0.5, 0, 0, Math.PI * 2);
+    ctx.fill();
+    var toes = [
+      [-0.62, -0.28, -0.22],
+      [-0.2, -0.58, -0.06],
+      [0.2, -0.58, 0.06],
+      [0.62, -0.28, 0.22]
+    ];
+    toes.forEach(function (toe) {
+      ctx.beginPath();
+      ctx.ellipse(cx + scale * toe[0], cy + scale * toe[1], scale * 0.19, scale * 0.26, toe[2], 0, Math.PI * 2);
+      ctx.fill();
+    });
+    ctx.restore();
+  }
+
+  function drawCanvasQr(ctx, value, x, y, size) {
+    var qr = makeQr(value);
+    if (!qr) return false;
+    var modules = qr.getModuleCount();
+    var quiet = 4;
+    var total = modules + quiet * 2;
+    var cell = size / total;
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(x, y, size, size);
+    ctx.fillStyle = "#211C18";
+    for (var row = 0; row < modules; row += 1) {
+      for (var col = 0; col < modules; col += 1) {
+        if (qr.isDark(row, col)) {
+          ctx.fillRect(
+            x + Math.floor((col + quiet) * cell),
+            y + Math.floor((row + quiet) * cell),
+            Math.ceil(cell),
+            Math.ceil(cell)
+          );
+        }
+      }
+    }
+    return true;
+  }
+
+  function drawCardPhoto(ctx, image, pet, x, y, width, height, radius) {
+    ctx.save();
+    canvasRoundRect(ctx, x, y, width, height, radius);
+    ctx.clip();
+    if (image && image.naturalWidth) {
+      var ratio = Math.max(width / image.naturalWidth, height / image.naturalHeight);
+      var drawWidth = image.naturalWidth * ratio;
+      var drawHeight = image.naturalHeight * ratio;
+      var position = String((pet.photos && pet.photos[0] && pet.photos[0].position) || "50% 30%").split(/\s+/);
+      var px = parseFloat(position[0]) / 100;
+      var py = parseFloat(position[1]) / 100;
+      if (isNaN(px)) px = 0.5;
+      if (isNaN(py)) py = 0.3;
+      var dx = x + (width - drawWidth) * px;
+      var dy = y + (height - drawHeight) * py;
+      ctx.drawImage(image, dx, dy, drawWidth, drawHeight);
+    } else {
+      var gradient = ctx.createLinearGradient(x, y, x + width, y + height);
+      gradient.addColorStop(0, "#e9dccb");
+      gradient.addColorStop(1, "#d8c4aa");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(x, y, width, height);
+      ctx.fillStyle = "rgba(90,68,48,0.55)";
+      ctx.font = '600 ' + Math.round(height * 0.32) + 'px Fraunces, Georgia, serif';
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(firstChar(display(pet.name)), x + width / 2, y + height / 2);
+    }
+    ctx.restore();
+    ctx.save();
+    canvasRoundRect(ctx, x, y, width, height, radius);
+    ctx.strokeStyle = "rgba(255,255,255,0.9)";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function renderIdCardCanvas(pet, includePhoto, callback) {
+    var width = 1600;
+    var height = Math.round(width / 1.62);
+    var canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+    var ctx = canvas.getContext("2d");
+
+    function paint(image) {
+      var gradient = ctx.createLinearGradient(0, 0, width, height);
+      gradient.addColorStop(0, "#fffdf8");
+      gradient.addColorStop(0.54, "#fbf4e8");
+      gradient.addColorStop(1, "#f6ecdd");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.save();
+      ctx.globalAlpha = 0.055;
+      ctx.strokeStyle = "#785834";
+      ctx.lineWidth = 1;
+      for (var i = -height; i < width; i += 26) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i + height, height);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      ctx.strokeStyle = "rgba(120,88,52,0.22)";
+      ctx.lineWidth = 2;
+      canvasRoundRect(ctx, 1, 1, width - 2, height - 2, 36);
+      ctx.stroke();
+
+      // Header
+      canvasRoundRect(ctx, 64, 56, 62, 62, 18);
+      ctx.fillStyle = "#211C18";
+      ctx.fill();
+      drawCanvasPaw(ctx, 95, 88, 17, "#FFF9F1");
+
+      ctx.textAlign = "left";
+      ctx.textBaseline = "alphabetic";
+      ctx.font = "600 50px Fraunces, Georgia, serif";
+      ctx.fillStyle = "#211C18";
+      ctx.fillText("Paw", 146, 104);
+      var pawWidth = ctx.measureText("Paw").width;
+      ctx.fillStyle = "#a9522f";
+      ctx.fillText("ID", 146 + pawWidth, 104);
+
+      ctx.font = "600 17px Inter, Arial, sans-serif";
+      ctx.fillStyle = "#72675d";
+      ctx.textAlign = "center";
+      ctx.fillText(String(t("id.cardType")).toUpperCase(), width / 2, 92);
+
+      canvasRoundRect(ctx, width - 176, 58, 112, 60, 12);
+      ctx.strokeStyle = "rgba(140,105,60,0.35)";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      ctx.fillStyle = "rgba(226,203,170,0.6)";
+      ctx.fill();
+      ctx.strokeStyle = "rgba(140,105,60,0.3)";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(width - 150, 58);
+      ctx.lineTo(width - 150, 118);
+      ctx.moveTo(width - 104, 58);
+      ctx.lineTo(width - 104, 118);
+      ctx.stroke();
+
+      ctx.strokeStyle = "rgba(120,88,52,0.2)";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(64, 150);
+      ctx.lineTo(width - 64, 150);
+      ctx.stroke();
+
+      // Photo
+      var photoX = 64;
+      var photoY = 190;
+      var photoW = 304;
+      var photoH = 360;
+      drawCardPhoto(ctx, image, pet, photoX, photoY, photoW, photoH, 26);
+
+      // Info
+      var infoX = 410;
+      var infoWidth = 760;
+      ctx.textAlign = "left";
+      ctx.fillStyle = "#92867a";
+      ctx.font = "600 17px Inter, Arial, sans-serif";
+      ctx.fillText(String(t("id.name")).toUpperCase(), infoX, 220);
+
+      var name = display(pet.name);
+      var nameSize = 78;
+      var nameLines = [];
+      while (nameSize > 44) {
+        ctx.font = "600 " + nameSize + "px Fraunces, Georgia, serif";
+        nameLines = canvasWrapText(ctx, name, infoWidth, 2);
+        if (nameLines.length <= 2) break;
+        nameSize -= 6;
+      }
+      ctx.fillStyle = "#211C18";
+      ctx.textBaseline = "top";
+      nameLines.forEach(function (line, index) {
+        ctx.fillText(line, infoX, 236 + index * (nameSize + 2));
+      });
+      ctx.textBaseline = "alphabetic";
+
+      var rowY = 236 + Math.max(1, nameLines.length) * (nameSize + 2) + 48;
+
+      function drawField(label, value, x, y, valueFont, valueColor, maxWidth) {
+        ctx.fillStyle = "#92867a";
+        ctx.font = "600 16px Inter, Arial, sans-serif";
+        ctx.fillText(String(label).toUpperCase(), x, y);
+        var text = String(value || "—");
+        var size = valueFont;
+        ctx.font = "500 " + size + "px Inter, Arial, sans-serif";
+        while (size > 16 && ctx.measureText(text).width > maxWidth) {
+          size -= 2;
+          ctx.font = "500 " + size + "px Inter, Arial, sans-serif";
+        }
+        ctx.fillStyle = valueColor || "#3b332c";
+        ctx.fillText(text, x, y + 36);
+      }
+
+      drawField(t("id.breed"), display(pet.breed), infoX, rowY, 28, "#3b332c", 350);
+      drawField(t("id.age"), display(pet.age), infoX + 390, rowY, 28, "#3b332c", 300);
+      drawField(t("id.sex"), display(pet.gender), infoX, rowY + 100, 28, "#3b332c", 350);
+      drawField(t("id.location"), display(pet.location), infoX + 390, rowY + 100, 30, "#211C18", 360);
+
+      var numberY = rowY + 200;
+      ctx.strokeStyle = "rgba(120,88,52,0.26)";
+      ctx.lineWidth = 2;
+      ctx.setLineDash([6, 6]);
+      ctx.beginPath();
+      ctx.moveTo(infoX, numberY - 28);
+      ctx.lineTo(infoX + infoWidth, numberY - 28);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.fillStyle = "#92867a";
+      ctx.font = "600 16px Inter, Arial, sans-serif";
+      ctx.fillText(String(t("id.number")).toUpperCase(), infoX, numberY);
+      ctx.fillStyle = "#8c3f21";
+      ctx.font = "600 32px 'Cascadia Mono', Consolas, monospace";
+      ctx.fillText(String(pet.petId), infoX, numberY + 40);
+
+      // Status pill
+      var statusY = numberY + 82;
+      var statusText = String(t("id.status")) + "  ·  " + String(t("id.statusZh"));
+      ctx.font = "600 20px Inter, Arial, sans-serif";
+      var statusWidth = ctx.measureText(statusText).width + 64;
+      canvasRoundRect(ctx, infoX, statusY, statusWidth, 46, 23);
+      ctx.fillStyle = "rgba(111,130,104,0.1)";
+      ctx.fill();
+      ctx.strokeStyle = "rgba(111,130,104,0.35)";
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.fillStyle = "#6f9b6d";
+      ctx.arc(infoX + 24, statusY + 23, 7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#526a4c";
+      ctx.fillText(statusText, infoX + 42, statusY + 30);
+
+      // QR
+      var qrSize = 288;
+      var qrX = width - 64 - qrSize;
+      var qrY = 206;
+      canvasRoundRect(ctx, qrX - 12, qrY - 12, qrSize + 24, qrSize + 24, 18);
+      ctx.fillStyle = "rgba(255,255,255,0.7)";
+      ctx.fill();
+      ctx.strokeStyle = "rgba(120,88,52,0.16)";
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      drawCanvasQr(ctx, pet.id, qrX, qrY, qrSize);
+
+      ctx.textAlign = "center";
+      ctx.fillStyle = "#3b332c";
+      ctx.font = "700 20px Inter, Arial, sans-serif";
+      ctx.fillText(String(t("id.scan")), qrX + qrSize / 2, qrY + qrSize + 54);
+      ctx.fillStyle = "#72675d";
+      ctx.font = "500 21px Inter, 'Microsoft YaHei', sans-serif";
+      ctx.fillText(String(t("id.scanZh")), qrX + qrSize / 2, qrY + qrSize + 84);
+
+      // Footer
+      ctx.strokeStyle = "rgba(120,88,52,0.18)";
+      ctx.lineWidth = 2;
+      ctx.textAlign = "left";
+      ctx.beginPath();
+      ctx.moveTo(64, height - 112);
+      ctx.lineTo(width - 64, height - 112);
+      ctx.stroke();
+      ctx.fillStyle = "#92867a";
+      ctx.font = "500 19px Inter, Arial, sans-serif";
+      ctx.fillText(String(t("id.foot")), 64, height - 66);
+      drawCanvasPaw(ctx, width - 86, height - 76, 15, "#a9522f");
+
+      callback(canvas);
+    }
+
+    var photo = pet.photos && pet.photos[0];
+    if (!includePhoto || !photo || !photo.src) {
+      paint(null);
+      return;
+    }
+    var image = new Image();
+    image.onload = function () {
+      paint(image);
+    };
+    image.onerror = function () {
+      paint(null);
+    };
+    image.src = photo.src;
+  }
+
+  function downloadIdCard(pet) {
+    if (!pet) return;
+    renderIdCardCanvas(pet, true, function (firstCanvas) {
+      saveCanvasAsPng(firstCanvas, pet, false);
+    });
+  }
+
+  function saveCanvasAsPng(canvas, pet, retried) {
+    function fallback() {
+      if (!retried) {
+        renderIdCardCanvas(pet, false, function (canvasWithoutPhoto) {
+          saveCanvasAsPng(canvasWithoutPhoto, pet, true);
+        });
+      } else {
+        showToast(t("errors.download"));
+      }
+    }
+
+    try {
+      if (!canvas.toBlob) {
+        fallback();
+        return;
+      }
+      canvas.toBlob(function (blob) {
+        if (!blob) {
+          fallback();
+          return;
+        }
+        var name = String(pet.petId || pet.id || "PawID")
+          .replace(/[^A-Za-z0-9._-]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+        var link = document.createElement("a");
+        var url = URL.createObjectURL(blob);
+        link.href = url;
+        link.download = "PawID-" + (name || "card") + ".png";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.setTimeout(function () {
+          URL.revokeObjectURL(url);
+        }, 4000);
+        showToast(t("toast.downloaded"));
+      }, "image/png");
+    } catch (error) {
+      fallback();
+    }
   }
 
   function openIdModal(pet) {
@@ -1627,6 +2186,10 @@
       '<button class="btn btn--primary" type="button" data-print>' +
       icon("printer") +
       escapeHtml(t("id.print")) +
+      "</button>" +
+      '<button class="btn btn--ghost" type="button" data-download-id>' +
+      icon("download") +
+      escapeHtml(t("id.download")) +
       "</button>" +
       '<button class="btn btn--ghost" type="button" data-close-overlay>' +
       escapeHtml(t("id.close")) +
@@ -1743,8 +2306,14 @@
   function lostMedicalValue(field) {
     var en = rawEn(field) || "Not provided";
     var zh = rawZh(field) || "未填写";
-    if (en === zh) return '<dd>' + escapeHtml(en) + "</dd>";
-    return '<dd><span>' + escapeHtml(en) + '</span><span class="zh">' + escapeHtml(zh) + "</span></dd>";
+    if (en === zh) return '<dd class="lost-medical__value">' + escapeHtml(en) + "</dd>";
+    return (
+      '<dd class="lost-medical__value"><span class="lost-medical__en" lang="en">' +
+      escapeHtml(en) +
+      '</span><span class="lost-medical__zh zh" lang="zh-CN">' +
+      escapeHtml(zh) +
+      "</span></dd>"
+    );
   }
 
   function openLostMode(pet) {
@@ -1768,13 +2337,7 @@
       lostHtml = '<p class="lost-instruction__en">' + escapeHtml(lostEn || lostZh || "Please approach gently and calmly. / 请温柔、慢慢地靠近我。") + "</p>";
     }
 
-    var locationEn = rawEn(pet.location) || "Not provided";
-    var locationZh = rawZh(pet.location) || "未填写";
-    var locationHtml =
-      escapeHtml(locationEn) +
-      (locationZh !== locationEn
-        ? '<span class="lost-info__zh">' + escapeHtml(locationZh) + "</span>"
-        : "");
+    var locationText = normaliseLocation(rawEn(pet.location) || rawZh(pet.location)) || "Not provided";
 
     var allergiesEn = rawEn(pet.allergies) || "Not provided";
     var allergiesZh = rawZh(pet.allergies) || "未填写";
@@ -1782,8 +2345,9 @@
     var medicationZh = rawZh(pet.medication) || "未填写";
     var careEn = rawEn(pet.care) || "Not provided";
     var careZh = rawZh(pet.care) || "未填写";
-    var ownerEn = rawEn(pet.owner) || "Owner";
-    var ownerZh = rawZh(pet.owner) || "主人";
+    // Owner names are private. Lost Mode only ever shows a generic contact label.
+    var ownerEn = "Owner";
+    var ownerZh = "主人";
 
     var root = document.getElementById("lost-root");
     root.hidden = false;
@@ -1819,6 +2383,8 @@
       '<h2 class="lost-call-card__title">Please contact my owner.<span>请联系我的主人。</span></h2>' +
       '<a class="lost-call" href="' +
       escapeHtml(telHref(pet.phone)) +
+      '" aria-label="Call Owner / 联系主人: ' +
+      escapeHtml(pet.phone) +
       '"><span class="lost-call__icon">' +
       icon("phone") +
       '</span><span class="lost-call__text"><strong>Call Owner</strong><span>联系主人</span></span><span class="lost-call__number">' +
@@ -1829,21 +2395,21 @@
       '<div class="lost-grid">' +
       '<section class="lost-info"><span class="lost-info__label">' +
       icon("phone") +
-      "Emergency contact · 紧急联系人</span>" +
+      "Emergency Contact · 紧急联系人</span>" +
       '<span class="lost-info__value"><a href="' +
       escapeHtml(telHref(pet.emergencyPhone)) +
       '">' +
       escapeHtml(pet.emergencyPhone) +
       '</a><span class="lost-info__zh">' +
       escapeHtml(ownerEn) +
-      " / " +
+      " · " +
       escapeHtml(ownerZh) +
       "</span></span></section>" +
       '<section class="lost-info"><span class="lost-info__label">' +
       icon("pin") +
       "Location · 所在区域</span>" +
       '<span class="lost-info__value">' +
-      locationHtml +
+      escapeHtml(locationText) +
       "</span></section>" +
       "</div>" +
       '<section class="lost-panel lost-panel--instructions">' +
@@ -1854,15 +2420,15 @@
       '<p class="lost-reassure"><span>If you can, please stay with me until my owner arrives.</span><span class="zh">如果方便，请陪在我身边，直到主人到来。</span></p>' +
       "</section>" +
       '<section class="lost-panel lost-panel--medical">' +
-      "<h2>Medical information<span>医疗信息</span></h2>" +
+      "<h2>Medical Information<span>医疗信息</span></h2>" +
       '<dl class="lost-medical">' +
-      "<div><dt>Allergies<span>过敏情况</span></dt>" +
+      '<div class="lost-medical__item"><dt class="lost-medical__label"><strong>Allergies</strong><span lang="zh-CN">过敏情况</span></dt>' +
       lostMedicalValue(bi(allergiesEn, allergiesZh)) +
       "</div>" +
-      "<div><dt>Medication<span>用药情况</span></dt>" +
+      '<div class="lost-medical__item"><dt class="lost-medical__label"><strong>Medication</strong><span lang="zh-CN">用药情况</span></dt>' +
       lostMedicalValue(bi(medicationEn, medicationZh)) +
       "</div>" +
-      "<div><dt>Care notes<span>照护备注</span></dt>" +
+      '<div class="lost-medical__item"><dt class="lost-medical__label"><strong>Care Notes</strong><span lang="zh-CN">照护备注</span></dt>' +
       lostMedicalValue(bi(careEn, careZh)) +
       "</div>" +
       "</dl>" +
@@ -2037,6 +2603,7 @@
       detailItem(t("pet.species"), display(pet.species)) +
       detailItem(t("pet.breed"), display(pet.breed)) +
       detailItem(t("pet.age"), display(pet.age)) +
+      (pet.birthday ? detailItem(t("pet.birthday"), formatBirthday(pet.birthday)) : "") +
       detailItem(t("pet.gender"), display(pet.gender)) +
       detailItem(t("pet.colour"), display(pet.colour)) +
       detailItem(t("pet.weight"), display(pet.weight)) +
@@ -2088,7 +2655,9 @@
       '<div class="contact-tile"><span class="contact-tile__label">' +
       icon("user") +
       escapeHtml(t("pet.owner")) +
-      "</span><strong>" +
+      '<span class="contact-tile__tag">' +
+      escapeHtml(t("pet.ownerPrivate")) +
+      "</span></span><strong>" +
       escapeHtml(owner) +
       '</strong><a href="' +
       escapeHtml(telHref(ownerPhone)) +
@@ -2108,6 +2677,11 @@
       escapeHtml(t("pet.backup")) +
       "</small></div>" +
       "</div>" +
+      '<p class="owner-private-note">' +
+      icon("lock") +
+      "<span>" +
+      escapeHtml(t("pet.privateOwnerNote")) +
+      "</span></p>" +
       '<div class="lost-instructions"><h3>' +
       icon("alert") +
       escapeHtml(t("pet.lostInstructions")) +
@@ -2134,12 +2708,26 @@
       escapeHtml(t("pet.publicInfo")) +
       "</h3><p>" +
       escapeHtml(t("pet.publicDesc")) +
-      '</p></div><div class="privacy-half privacy-half--private"><h3>' +
+      '</p><ul class="privacy-list-inline">' +
+      "<li>" + escapeHtml(t("privacyList.public1")) + "</li>" +
+      "<li>" + escapeHtml(t("privacyList.public2")) + "</li>" +
+      "<li>" + escapeHtml(t("privacyList.public3")) + "</li>" +
+      "<li>" + escapeHtml(t("privacyList.public4")) + "</li>" +
+      "<li>" + escapeHtml(t("privacyList.public5")) + "</li>" +
+      "<li>" + escapeHtml(t("privacyList.public6")) + "</li>" +
+      "<li>" + escapeHtml(t("privacyList.public7")) + "</li>" +
+      "</ul></div>" +
+      '<div class="privacy-half privacy-half--private"><h3>' +
       icon("lock") +
       escapeHtml(t("pet.privateInfo")) +
       "</h3><p>" +
       escapeHtml(t("pet.privateDesc")) +
-      "</p></div></div></section>" +
+      '</p><ul class="privacy-list-inline privacy-list-inline--private">' +
+      "<li>" + escapeHtml(t("privacyList.private1")) + "</li>" +
+      "<li>" + escapeHtml(t("privacyList.private2")) + "</li>" +
+      "<li>" + escapeHtml(t("privacyList.private3")) + "</li>" +
+      "<li>" + escapeHtml(t("privacyList.private4")) + "</li>" +
+      "</ul></div></div></section>" +
       "</div></div></div>" +
       '<section class="id-section reveal"><div class="id-section__copy"><span class="eyebrow">' +
       escapeHtml(t("pet.digitalId")) +
@@ -2153,6 +2741,9 @@
       '</button><button class="btn btn--ghost" type="button" data-print-card>' +
       icon("printer") +
       escapeHtml(t("pet.print")) +
+      '</button><button class="btn btn--ghost" type="button" data-download-id>' +
+      icon("download") +
+      escapeHtml(t("id.download")) +
       "</button></div></div>" +
       idCard(pet) +
       "</section>" +
@@ -2164,7 +2755,7 @@
     initQrCodes(root);
     initReveal();
 
-    if (!state.autoOpenedLost && params.get("lost") === "1") {
+    if (!state.autoOpenedLost && (params.get("mode") === "lost" || params.get("lost") === "1")) {
       state.autoOpenedLost = true;
       window.setTimeout(function () {
         openLostMode(pet);
@@ -2218,7 +2809,7 @@
     var typeValue = fieldValue("animal-type");
     var species = speciesFor(typeValue);
     var breed = fieldValue("breed");
-    var suburb = fieldValue("suburb");
+    var suburb = normaliseLocation(fieldValue("suburb"));
     var nameEl = document.getElementById("preview-name");
     var speciesEl = document.getElementById("preview-species");
     var breedEl = document.getElementById("preview-breed");
@@ -2247,6 +2838,8 @@
           escapeHtml(state.photoData) +
           '" alt="' +
           escapeHtml(name || t("form.photo")) +
+          '" style="object-position:' +
+          escapeHtml(state.photoPosition) +
           '">';
       } else {
         var previewPet = { name: bi(name, name), photos: [] };
@@ -2254,7 +2847,11 @@
       }
     }
 
-    if (qrEl) qrEl.innerHTML = qrSvg(petId);
+    if (qrEl) {
+      qrEl.innerHTML = qrSvg(
+        "pet.html?id=" + encodeURIComponent(petId) + "&mode=lost"
+      );
+    }
   }
 
   function clearErrors() {
@@ -2286,12 +2883,19 @@
 
   function resetPhoto() {
     state.photoData = null;
+    state.photoPosition = "50% 30%";
     var input = document.getElementById("pet-photo");
     var label = document.getElementById("upload-label");
     var preview = document.getElementById("upload-preview");
+    var cropControls = document.getElementById("crop-controls");
+    var xControl = document.getElementById("photo-x");
+    var yControl = document.getElementById("photo-y");
     if (input) input.value = "";
     if (label) label.hidden = false;
     if (preview) preview.hidden = true;
+    if (cropControls) cropControls.hidden = true;
+    if (xControl) xControl.value = "50";
+    if (yControl) yControl.value = "30";
     updatePreview();
   }
 
@@ -2355,13 +2959,16 @@
         state.photoData = dataUrl;
         var label = document.getElementById("upload-label");
         var preview = document.getElementById("upload-preview");
+        var cropControls = document.getElementById("crop-controls");
         var image = document.getElementById("upload-image");
         var fileName = document.getElementById("upload-name");
         if (label) label.hidden = true;
         if (preview) preview.hidden = false;
+        if (cropControls) cropControls.hidden = false;
         if (image) {
           image.src = dataUrl;
           image.alt = fieldValue("pet-name") || t("form.photo");
+          image.style.objectPosition = state.photoPosition;
         }
         if (fileName) fileName.textContent = file.name;
         updatePreview();
@@ -2380,9 +2987,17 @@
     var gender = optionFor(GENDER_OPTIONS, fieldValue("gender")) || GENDER_OPTIONS[2];
     var sterilised = optionFor(STERILISED_OPTIONS, fieldValue("sterilised")) || STERILISED_OPTIONS[2];
     var breed = fieldValue("breed");
-    var age = fieldValue("birthday");
+    var birthday = fieldValue("birthday");
+    var age = deriveAge(birthday, fieldValue("age"));
     var colour = fieldValue("colour");
-    var weight = fieldValue("weight");
+    var weightRaw = fieldValue("weight");
+    var weightUnit = fieldValue("weight-unit") === "lb" ? "lb" : "kg";
+    var weight = weightRaw
+      ? bi(
+          /(kg|lb)/i.test(weightRaw) ? weightRaw : weightRaw + " " + weightUnit,
+          /(kg|lb)/i.test(weightRaw) ? weightRaw : weightRaw + " " + weightUnit
+        )
+      : bi("", "");
     var personality = fieldValue("personality");
     var favFood = fieldValue("fav-food");
     var favToy = fieldValue("fav-toy");
@@ -2393,7 +3008,7 @@
     var ownerName = fieldValue("owner-name");
     var phone = fieldValue("owner-phone");
     var emergency = fieldValue("emergency-contact") || phone;
-    var suburb = fieldValue("suburb");
+    var suburb = normaliseLocation(fieldValue("suburb"));
 
     var favoriteLabel;
     var favourites;
@@ -2416,7 +3031,8 @@
     if (state.photoData) {
       photos.push({
         src: state.photoData,
-        alt: bi(name + " photo", name + " 的照片")
+        alt: bi(name + " photo", name + " 的照片"),
+        position: state.photoPosition
       });
     }
 
@@ -2429,9 +3045,10 @@
       species: bi(species.en, species.zh),
       breed: bi(breed, breed),
       gender: bi(gender.en, gender.zh),
-      age: bi(age, age),
+      age: age,
+      birthday: birthday,
       colour: bi(colour, colour),
-      weight: bi(weight, weight),
+      weight: weight,
       sterilised: bi(sterilised.en, sterilised.zh),
       location: bi(suburb, suburb),
       personality: bi(personality, personality),
@@ -2486,7 +3103,7 @@
       setError("owner-phone", "error-phone", t("errors.phone"));
       valid = false;
       if (!firstInvalid) firstInvalid = document.getElementById("owner-phone");
-    } else if (!isStaffordPhone(phone)) {
+    } else if (!isAustralianMobile(phone)) {
       setError("owner-phone", "error-phone", t("errors.phoneInvalid"));
       valid = false;
       if (!firstInvalid) firstInvalid = document.getElementById("owner-phone");
@@ -2514,7 +3131,7 @@
       }
       if (event.target && event.target.id === "owner-phone") {
         var phoneError = document.getElementById("error-phone");
-        if (phoneError && !phoneError.hidden && isStaffordPhone(event.target.value)) {
+        if (phoneError && !phoneError.hidden && isAustralianMobile(event.target.value)) {
           phoneError.hidden = true;
           event.target.removeAttribute("aria-invalid");
         }
@@ -2572,6 +3189,19 @@
         resetPhoto();
       });
     }
+
+    var cropX = document.getElementById("photo-x");
+    var cropY = document.getElementById("photo-y");
+    function updatePhotoPosition() {
+      var x = cropX ? cropX.value : "50";
+      var y = cropY ? cropY.value : "30";
+      state.photoPosition = x + "% " + y + "%";
+      var image = document.getElementById("upload-image");
+      if (image) image.style.objectPosition = state.photoPosition;
+      updatePreview();
+    }
+    if (cropX) cropX.addEventListener("input", updatePhotoPosition);
+    if (cropY) cropY.addEventListener("input", updatePhotoPosition);
 
     var upload = document.getElementById("upload");
     if (upload) {
@@ -2794,6 +3424,7 @@
   function petFromEvent(event) {
     var trigger = event.target.closest("[data-pet]");
     if (trigger) return getPetById(trigger.dataset.pet);
+    if (state.overlay && state.overlay.pet) return state.overlay.pet;
     return state.currentPet;
   }
 
@@ -2874,6 +3505,14 @@
             window.print();
           }, 350);
         }
+        return;
+      }
+
+      var downloadCard = event.target.closest("[data-download-id]");
+      if (downloadCard) {
+        event.preventDefault();
+        var downloadPet = petFromEvent(event);
+        if (downloadPet) downloadIdCard(downloadPet);
         return;
       }
 
