@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1e9">
+  <meta name="description" content="Create a bilingual PawID digital pet identity in a few minutes.">
+  <title>Create a Pet ID · PawID</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23211C18'/%3E%3Cellipse cx='10' cy='11' rx='2.6' ry='3.2' fill='%23FFF9F1'/%3E%3Cellipse cx='16' cy='9.3' rx='2.6' ry='3.2' fill='%23FFF9F1'/%3E%3Cellipse cx='22' cy='11' rx='2.6' ry='3.2' fill='%23FFF9F1'/%3E%3Cpath d='M16 13.2c3.9 0 6.4 2.8 6.4 5.8 0 2.6-2.3 4-6.4 4s-6.4-1.4-6.4-4c0-3 2.5-5.8 6.4-5.8Z' fill='%23FFF9F1'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="create">
+
+  <a class="skip-link" href="#main" data-i18n="aria.skip">Skip to content</a>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="PawID home">
+        <span class="brand-mark" aria-hidden="true"><svg class="icon icon--paw"><use href="#i-paw"></use></svg></span>
+        <span class="brand-word">Paw<span class="brand-word__accent">ID</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation" data-i18n-aria-label="aria.primary">
+        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+        <a class="nav-link" href="pets.html" data-i18n="nav.pets">My Pets</a>
+        <a class="nav-link is-active" href="create.html" data-i18n="nav.create">Create Pet ID</a>
+        <a class="nav-link" href="index.html#how-it-works" data-i18n="nav.how">How It Works</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language / 语言" data-i18n-aria-label="aria.language">
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="true">EN</button>
+          <span class="lang-divider" aria-hidden="true">|</span>
+          <button class="lang-btn" type="button" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <span class="menu-toggle__box" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav class="container mobile-nav" aria-label="Mobile navigation" data-i18n-aria-label="aria.mobile">
+        <a href="index.html"><span data-i18n="nav.home">Home</span><svg class="icon"><use href="#i-chevron-right"></use></svg></a>
+        <a href="pets.html"><span data-i18n="nav.pets">My Pets</span><svg class="icon"><use href="#i-chevron-right"></use></svg></a>
+        <a href="create.html"><span data-i18n="nav.create">Create Pet ID</span><svg class="icon"><use href="#i-chevron-right"></use></svg></a>
+        <a href="index.html#how-it-works"><span data-i18n="nav.how">How It Works</span><svg class="icon"><use href="#i-chevron-right"></use></svg></a>
+        <div class="mobile-menu__footer">
+          <span data-i18n="footer.taglineShort">Pet safety, in two languages.</span>
+          <span class="mobile-menu__badge">EN · 中文</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow" data-i18n="create.eyebrow">Create a Pet ID</span>
+        <h1 class="page-title" data-i18n="create.title">Start their identity.</h1>
+        <p class="page-lede" data-i18n="create.lede">A few details now can make all the difference later. Everything can be updated whenever you need.</p>
+      </div>
+    </section>
+
+    <section class="create-page" style="padding-top: 0;">
+      <div class="container">
+
+        <div class="form-layout" id="form-layout">
+          <aside class="form-aside" aria-label="Live preview">
+            <div class="preview-card" id="pet-preview">
+              <div class="preview-card__top">
+                <span data-i18n="create.previewLabel">Live preview</span>
+                <span data-i18n="create.previewDraft">Draft</span>
+              </div>
+              <div class="preview-card__photo" id="preview-photo"></div>
+              <div class="preview-card__body">
+                <p class="preview-card__name" id="preview-name">Your pet's name</p>
+                <p class="preview-card__meta"><span id="preview-species">Animal type</span> · <span id="preview-breed">Breed</span></p>
+                <p class="preview-card__location">
+                  <svg class="icon"><use href="#i-pin"></use></svg>
+                  <span id="preview-location">Your suburb</span>
+                </p>
+                <div class="preview-card__foot">
+                  <span id="preview-id">PAW-PET-004</span>
+                  <span class="preview-card__qr" id="preview-qr"></span>
+                </div>
+              </div>
+            </div>
+            <p class="preview-card__note">
+              <svg class="icon"><use href="#i-lock"></use></svg>
+              <span data-i18n="create.previewNote">This is how their digital identity will look.</span>
+            </p>
+            <p class="form-aside__caption" data-i18n="create.previewCaption">Preview only — your pet's full card is generated after saving.</p>
+          </aside>
+
+          <form class="form-card" id="create-form" novalidate>
+            <div class="form-intro">
+              <span data-i18n="create.required">* Required fields</span>
+              <strong>PawID · <span data-i18n="create.previewDraft">Draft</span></strong>
+            </div>
+
+            <fieldset class="form-section">
+              <div class="form-section__head">
+                <span class="form-section__num">01</span>
+                <div>
+                  <h2 data-i18n="create.section1Title">About your pet</h2>
+                  <p data-i18n="create.section1Desc">The essentials that make them who they are.</p>
+                </div>
+              </div>
+              <div class="field-grid">
+                <div class="field">
+                  <label class="field__label" for="pet-name"><span data-i18n="form.name">Pet Name</span><span class="req" aria-hidden="true">*</span></label>
+                  <input class="input" id="pet-name" name="petName" type="text" autocomplete="off" required aria-required="true" data-i18n-placeholder="form.namePlaceholder" placeholder="e.g. ICE">
+                  <p class="field__error" id="error-name" role="alert" hidden></p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="animal-type"><span data-i18n="form.animalType">Animal Type</span><span class="req" aria-hidden="true">*</span></label>
+                  <select class="input" id="animal-type" name="animalType" required aria-required="true">
+                    <option value="" data-i18n="form.choose">Choose an animal type</option>
+                    <option value="dog" data-i18n="species.dog">Dog</option>
+                    <option value="cat" data-i18n="species.cat">Cat</option>
+                    <option value="rabbit" data-i18n="species.rabbit">Rabbit</option>
+                    <option value="bird" data-i18n="species.bird">Bird</option>
+                    <option value="hamster" data-i18n="species.hamster">Hamster</option>
+                    <option value="reptile" data-i18n="species.reptile">Reptile</option>
+                    <option value="other" data-i18n="species.other">Other</option>
+                  </select>
+                  <p class="field__error" id="error-type" role="alert" hidden></p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="breed" data-i18n="form.breed">Breed</label>
+                  <input class="input" id="breed" name="breed" type="text" autocomplete="off" data-i18n-placeholder="form.breedPlaceholder" placeholder="e.g. German Shepherd">
+                </div>
+                <div class="field">
+                  <label class="field__label" for="gender" data-i18n="form.gender">Gender</label>
+                  <select class="input" id="gender" name="gender">
+                    <option value="female" data-i18n="form.genderFemale">Female</option>
+                    <option value="male" data-i18n="form.genderMale">Male</option>
+                    <option value="unknown" selected data-i18n="form.genderUnknown">Unknown</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="birthday" data-i18n="form.birthday">Birthday / Age</label>
+                  <input class="input" id="birthday" name="birthday" type="text" autocomplete="off" data-i18n-placeholder="form.birthdayPlaceholder" placeholder="e.g. 14 Mar 2021 or 4 years">
+                </div>
+                <div class="field">
+                  <label class="field__label" for="colour" data-i18n="form.colour">Colour</label>
+                  <input class="input" id="colour" name="colour" type="text" autocomplete="off" data-i18n-placeholder="form.colourPlaceholder" placeholder="e.g. Brown / Tan">
+                </div>
+                <div class="field">
+                  <label class="field__label" for="weight" data-i18n="form.weight">Weight</label>
+                  <input class="input" id="weight" name="weight" type="text" inputmode="decimal" autocomplete="off" data-i18n-placeholder="form.weightPlaceholder" placeholder="e.g. 12 kg">
+                </div>
+                <div class="field">
+                  <label class="field__label" for="sterilised" data-i18n="form.sterilised">Sterilised</label>
+                  <select class="input" id="sterilised" name="sterilised">
+                    <option value="yes" data-i18n="form.sterYes">Yes</option>
+                    <option value="no" data-i18n="form.sterNo">No</option>
+                    <option value="unsure" selected data-i18n="form.sterUnsure">Not sure</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <div class="form-section__head">
+                <span class="form-section__num">02</span>
+                <div>
+                  <h2 data-i18n="create.section2Title">Health &amp; care</h2>
+                  <p data-i18n="create.section2Desc">Everyday details that help others care for them.</p>
+                </div>
+              </div>
+              <div class="field-grid">
+                <div class="field field--full">
+                  <label class="field__label" for="personality" data-i18n="form.personality">Personality</label>
+                  <textarea class="input" id="personality" name="personality" rows="3" data-i18n-placeholder="form.personalityPlaceholder" placeholder="How would you describe them?"></textarea>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="fav-food" data-i18n="form.favFood">Favourite Food</label>
+                  <input class="input" id="fav-food" name="favFood" type="text" autocomplete="off" data-i18n-placeholder="form.favFoodPlaceholder" placeholder="e.g. Chicken breast">
+                </div>
+                <div class="field">
+                  <label class="field__label" for="fav-toy" data-i18n="form.favToy">Favourite Toy</label>
+                  <input class="input" id="fav-toy" name="favToy" type="text" autocomplete="off" data-i18n-placeholder="form.favToyPlaceholder" placeholder="e.g. Squeaky ball">
+                </div>
+                <div class="field">
+                  <label class="field__label" for="allergies" data-i18n="form.allergies">Allergies</label>
+                  <input class="input" id="allergies" name="allergies" type="text" autocomplete="off" data-i18n-placeholder="form.allergiesPlaceholder" placeholder="e.g. None known">
+                </div>
+                <div class="field">
+                  <label class="field__label" for="medication" data-i18n="form.medication">Medication</label>
+                  <input class="input" id="medication" name="medication" type="text" autocomplete="off" data-i18n-placeholder="form.medicationPlaceholder" placeholder="e.g. None">
+                </div>
+                <div class="field field--full">
+                  <label class="field__label" for="care-notes" data-i18n="form.care">Care Notes</label>
+                  <textarea class="input" id="care-notes" name="careNotes" rows="3" data-i18n-placeholder="form.carePlaceholder" placeholder="Anything a carer should know?"></textarea>
+                </div>
+                <div class="field field--full">
+                  <label class="field__label" for="lost-instructions" data-i18n="form.lost">Lost Pet Instructions</label>
+                  <textarea class="input" id="lost-instructions" name="lostInstructions" rows="3" data-i18n-placeholder="form.lostPlaceholder" placeholder="How should someone approach your pet if they are lost?"></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <div class="form-section__head">
+                <span class="form-section__num">03</span>
+                <div>
+                  <h2 data-i18n="create.section3Title">Owner &amp; emergency contact</h2>
+                  <p data-i18n="create.section3Desc">Who to call if your pet is ever found.</p>
+                </div>
+              </div>
+              <div class="field-grid">
+                <div class="field">
+                  <label class="field__label" for="owner-name" data-i18n="form.ownerName">Owner Name</label>
+                  <input class="input" id="owner-name" name="ownerName" type="text" autocomplete="name" data-i18n-placeholder="form.ownerNamePlaceholder" placeholder="e.g. Alex Chen">
+                </div>
+                <div class="field">
+                  <label class="field__label" for="owner-phone"><span data-i18n="form.ownerPhone">Owner Phone</span><span class="req" aria-hidden="true">*</span></label>
+                  <input class="input" id="owner-phone" name="ownerPhone" type="tel" autocomplete="tel" required aria-required="true" data-i18n-placeholder="form.phonePlaceholder" placeholder="e.g. 04 1234 5678">
+                  <p class="field__error" id="error-phone" role="alert" hidden></p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="emergency-contact" data-i18n="form.emergency">Emergency Contact</label>
+                  <input class="input" id="emergency-contact" name="emergencyContact" type="tel" autocomplete="tel" data-i18n-placeholder="form.emergencyPlaceholder" placeholder="A second number if available">
+                </div>
+                <div class="field">
+                  <label class="field__label" for="suburb" data-i18n="form.suburb">Suburb</label>
+                  <input class="input" id="suburb" name="suburb" type="text" autocomplete="address-level2" data-i18n-placeholder="form.suburbPlaceholder" placeholder="e.g. Chatswood, NSW">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <div class="form-section__head">
+                <span class="form-section__num">04</span>
+                <div>
+                  <h2 data-i18n="create.section4Title">Pet photo</h2>
+                  <p data-i18n="create.section4Desc">A clear, friendly photo helps a finder recognise them instantly.</p>
+                </div>
+              </div>
+              <div class="field field--full">
+                <span class="field__label" id="photo-label"><span data-i18n="form.photo">Pet Photo</span></span>
+                <div class="upload" id="upload">
+                  <input class="sr-only" type="file" id="pet-photo" name="petPhoto" accept="image/*" aria-labelledby="photo-label">
+                  <label class="upload__label" for="pet-photo" id="upload-label">
+                    <span class="upload__icon"><svg class="icon"><use href="#i-camera"></use></svg></span>
+                    <span class="upload__title" data-i18n="form.photoCta">Choose a photo</span>
+                    <span class="upload__hint" data-i18n="form.photoHint">JPG or PNG · Optional · Max 12 MB</span>
+                  </label>
+                  <div class="upload__preview" id="upload-preview" hidden>
+                    <img id="upload-image" alt="">
+                    <div class="upload__preview-meta">
+                      <strong id="upload-name"></strong>
+                      <span data-i18n="form.photoReady">Ready to save</span>
+                    </div>
+                    <button class="btn btn--soft btn--sm" type="button" id="remove-photo" data-i18n="form.removePhoto">Remove photo</button>
+                  </div>
+                </div>
+                <p class="field__error" id="error-photo" role="alert" hidden></p>
+              </div>
+            </fieldset>
+
+            <div class="form-actions">
+              <button class="btn btn--primary" type="submit">
+                <span data-i18n="create.submit">Create Pet ID</span>
+                <svg class="icon"><use href="#i-arrow-right"></use></svg>
+              </button>
+              <a class="btn btn--ghost" href="pets.html" data-i18n="create.cancel">Cancel</a>
+            </div>
+            <p class="form-privacy">
+              <svg class="icon"><use href="#i-lock"></use></svg>
+              <span data-i18n="create.privacyNote">Only safety information is shown on the public profile.</span>
+            </p>
+          </form>
+        </div>
+
+        <section class="success-panel" id="create-success" hidden>
+          <div class="success-card">
+            <div class="success-icon"><svg class="icon"><use href="#i-check"></use></svg></div>
+            <span class="eyebrow" data-i18n="create.successEyebrow">Profile created</span>
+            <h2 class="success-title" data-i18n="create.successTitle">Their PawID is ready.</h2>
+            <p class="success-copy" data-i18n="create.successCopy">You can now view the profile, open the digital ID or switch on Lost Mode.</p>
+            <p class="success-name" id="success-name"></p>
+            <div class="success-meta">
+              <span data-i18n="id.number">PawID no.</span>
+              <strong id="success-id"></strong>
+            </div>
+            <div class="success-id" id="success-card"></div>
+            <div class="success-actions">
+              <a class="btn btn--primary" id="success-view" href="pets.html">
+                <span data-i18n="create.successView">View pet profile</span>
+                <svg class="icon"><use href="#i-arrow-right"></use></svg>
+              </a>
+              <a class="btn btn--ghost" href="pets.html" data-i18n="create.successPets">Go to My Pets</a>
+              <button class="btn btn--ghost" type="button" id="create-another" data-i18n="create.successAnother">Create another</button>
+            </div>
+            <p class="success-local">
+              <svg class="icon"><use href="#i-lock"></use></svg>
+              <span data-i18n="create.successLocal">Saved on this device.</span>
+            </p>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="index.html" aria-label="PawID home">
+            <span class="brand-mark" aria-hidden="true"><svg class="icon icon--paw"><use href="#i-paw"></use></svg></span>
+            <span class="brand-word">Paw<span class="brand-word__accent">ID</span></span>
+          </a>
+          <p class="footer-tagline" data-i18n="footer.tagline">A bilingual digital identity for the pets we love.</p>
+          <p class="footer-location"><span class="status-dot"></span><span data-i18n="footer.location">Sydney, Australia</span></p>
+        </div>
+        <div>
+          <h3 class="footer-title" data-i18n="footer.product">Product</h3>
+          <div class="footer-links">
+            <a href="pets.html" data-i18n="nav.pets">My Pets</a>
+            <a href="create.html" data-i18n="nav.create">Create Pet ID</a>
+            <a href="index.html#pets" data-i18n="featured.eyebrow">Featured pets</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-title" data-i18n="footer.safety">Safety</h3>
+          <div class="footer-links">
+            <a href="pet.html?id=ice&amp;lost=1" data-i18n="footer.lostGuide">Lost Mode guide</a>
+            <a href="index.html#tag" data-i18n="footer.qrTag">The QR tag</a>
+            <a href="index.html#privacy" data-i18n="footer.privacy">Privacy promise</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-title" data-i18n="footer.about">PawID</h3>
+          <div class="footer-links">
+            <a href="index.html#how-it-works" data-i18n="footer.approach">Our approach</a>
+            <a href="mailto:hello@pawid.au" data-i18n="footer.contact">Contact</a>
+            <a href="mailto:hello@pawid.au">hello@pawid.au</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.note">PawID is a design prototype. All phone numbers shown are fictional demonstration numbers.</p>
+        <p data-i18n="footer.rights">© 2026 PawID. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="modal-root" class="modal-root"></div>
+  <div id="lost-root" hidden></div>
+  <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

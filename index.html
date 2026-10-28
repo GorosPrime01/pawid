@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1e9">
+  <meta name="description" content="PawID is a bilingual English and Simplified Chinese digital pet identity and safety platform for Australian pet owners.">
+  <title>PawID — Every Pet Deserves an Identity.</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23211C18'/%3E%3Cellipse cx='10' cy='11' rx='2.6' ry='3.2' fill='%23FFF9F1'/%3E%3Cellipse cx='16' cy='9.3' rx='2.6' ry='3.2' fill='%23FFF9F1'/%3E%3Cellipse cx='22' cy='11' rx='2.6' ry='3.2' fill='%23FFF9F1'/%3E%3Cpath d='M16 13.2c3.9 0 6.4 2.8 6.4 5.8 0 2.6-2.3 4-6.4 4s-6.4-1.4-6.4-4c0-3 2.5-5.8 6.4-5.8Z' fill='%23FFF9F1'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+
+  <a class="skip-link" href="#main" data-i18n="aria.skip">Skip to content</a>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="PawID home">
+        <span class="brand-mark" aria-hidden="true"><svg class="icon icon--paw"><use href="#i-paw"></use></svg></span>
+        <span class="brand-word">Paw<span class="brand-word__accent">ID</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation" data-i18n-aria-label="aria.primary">
+        <a class="nav-link is-active" href="index.html" data-i18n="nav.home">Home</a>
+        <a class="nav-link" href="pets.html" data-i18n="nav.pets">My Pets</a>
+        <a class="nav-link" href="create.html" data-i18n="nav.create">Create Pet ID</a>
+        <a class="nav-link" href="index.html#how-it-works" data-i18n="nav.how">How It Works</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language / 语言" data-i18n-aria-label="aria.language">
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="true">EN</button>
+          <span class="lang-divider" aria-hidden="true">|</span>
+          <button class="lang-btn" type="button" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <span class="menu-toggle__box" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav class="container mobile-nav" aria-label="Mobile navigation" data-i18n-aria-label="aria.mobile">
+        <a href="index.html"><span data-i18n="nav.home">Home</span><svg class="icon"><use href="#i-chevron-right"></use></svg></a>
+        <a href="pets.html"><span data-i18n="nav.pets">My Pets</span><svg class="icon"><use href="#i-chevron-right"></use></svg></a>
+        <a href="create.html"><span data-i18n="nav.create">Create Pet ID</span><svg class="icon"><use href="#i-chevron-right"></use></svg></a>
+        <a href="index.html#how-it-works"><span data-i18n="nav.how">How It Works</span><svg class="icon"><use href="#i-chevron-right"></use></svg></a>
+        <div class="mobile-menu__footer">
+          <span data-i18n="footer.taglineShort">Pet safety, in two languages.</span>
+          <span class="mobile-menu__badge">EN · 中文</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="hero-badge">
+            <span class="hero-badge__dot"><svg class="icon"><use href="#i-paw"></use></svg></span>
+            <span data-i18n="hero.badge">A digital identity for every pet</span>
+          </span>
+          <h1 class="hero-title">
+            <span data-i18n="hero.titleA">Every Pet Deserves</span>
+            <em data-i18n="hero.titleB">an Identity.</em>
+          </h1>
+          <p class="hero-sub" data-i18n="hero.sub">Create a digital identity for your pet and make their important information easier to access when it matters most.</p>
+          <div class="hero-cta">
+            <a class="btn btn--primary" href="create.html">
+              <span data-i18n="hero.primary">Create a Pet ID</span>
+              <svg class="icon"><use href="#i-arrow-right"></use></svg>
+            </a>
+            <a class="btn btn--ghost" href="#pets">
+              <span data-i18n="hero.secondary">Meet Our Pets</span>
+            </a>
+          </div>
+          <div class="hero-notes">
+            <span><svg class="icon"><use href="#i-check"></use></svg><span data-i18n="hero.note1">Australian owned</span></span>
+            <span><svg class="icon"><use href="#i-globe"></use></svg><span data-i18n="hero.note2">English + 中文</span></span>
+            <span><svg class="icon"><use href="#i-shield-check"></use></svg><span data-i18n="hero.note3">Privacy-first</span></span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <span class="hero-halo" aria-hidden="true"></span>
+          <div class="hero-photo">
+            <div class="hero-photo__inner">
+              <img src="images/ice-1-web.jpg" alt="ICE, a German Shepherd, looking at the camera" data-i18n-alt="hero.photoAlt">
+            </div>
+          </div>
+          <span class="hero-status"><span class="status-dot"></span><span data-i18n="hero.status">ID active</span></span>
+
+          <div class="hero-id">
+            <div class="hero-id__top">
+              <span data-i18n="hero.idLabel">Live digital ID</span>
+              <svg class="icon"><use href="#i-shield-check"></use></svg>
+            </div>
+            <div class="hero-id__row">
+              <div class="hero-id__photo"><img src="images/ice-1-web.jpg" alt=""></div>
+              <div>
+                <div class="hero-id__name">ICE</div>
+                <div class="hero-id__breed" data-i18n="hero.idBreed">German Shepherd · 6</div>
+              </div>
+              <div class="hero-id__qr" data-qr="PAW-ICE-001"></div>
+            </div>
+            <div class="hero-id__bottom">
+              <span>PAW-ICE-001</span>
+              <span data-i18n="hero.idStatus">Verified</span>
+            </div>
+          </div>
+
+          <div class="hero-tag">
+            <div class="hero-tag__qr" data-qr="PAWID-TAG"></div>
+            <span class="hero-tag__label">PAWID · <span data-i18n="hero.tagScan">Scan me</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust strip -->
+    <div class="trust-strip">
+      <div class="container trust-inner">
+        <span class="trust-item"><svg class="icon"><use href="#i-id-card"></use></svg><span data-i18n="trust.1">Digital pet identity</span></span>
+        <span class="trust-item"><svg class="icon"><use href="#i-qr"></use></svg><span data-i18n="trust.2">QR lost pet tag</span></span>
+        <span class="trust-item"><svg class="icon"><use href="#i-phone"></use></svg><span data-i18n="trust.3">Emergency contact</span></span>
+        <span class="trust-item"><svg class="icon"><use href="#i-medical"></use></svg><span data-i18n="trust.4">Medical notes</span></span>
+        <span class="trust-item"><svg class="icon"><use href="#i-globe"></use></svg><span data-i18n="trust.5">Bilingual by design</span></span>
+      </div>
+    </div>
+
+    <!-- How it works -->
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <div class="section-head section-head--split reveal">
+          <div>
+            <span class="eyebrow" data-i18n="how.eyebrow">How PawID works</span>
+            <h2 class="section-title" data-i18n="how.title">From profile to a safe way home.</h2>
+          </div>
+          <p class="section-lede" data-i18n="how.lede">Four simple steps, designed to take minutes — and to be there when it matters.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card reveal" data-step="01">
+            <span class="step-icon"><svg class="icon"><use href="#i-user"></use></svg></span>
+            <span class="step-label" data-i18n="how.step1.label">Step 01</span>
+            <h3 class="step-title" data-i18n="how.step1.title">Create Their Profile</h3>
+            <p class="step-text" data-i18n="how.step1.text">Add your pet's photo, breed, personality and care notes — everything a finder or vet might need.</p>
+          </article>
+          <article class="step-card reveal reveal-delay-1" data-step="02">
+            <span class="step-icon"><svg class="icon"><use href="#i-id-card"></use></svg></span>
+            <span class="step-label" data-i18n="how.step2.label">Step 02</span>
+            <h3 class="step-title" data-i18n="how.step2.title">Generate Their Digital ID</h3>
+            <p class="step-text" data-i18n="how.step2.text">PawID turns those details into a beautifully designed digital identity card.</p>
+          </article>
+          <article class="step-card reveal reveal-delay-2" data-step="03">
+            <span class="step-icon"><svg class="icon"><use href="#i-qr"></use></svg></span>
+            <span class="step-label" data-i18n="how.step3.label">Step 03</span>
+            <h3 class="step-title" data-i18n="how.step3.title">Attach Their QR Tag</h3>
+            <p class="step-text" data-i18n="how.step3.text">Link a lightweight QR tag to their collar, ready for the day it's needed.</p>
+          </article>
+          <article class="step-card reveal reveal-delay-3" data-step="04">
+            <span class="step-icon"><svg class="icon"><use href="#i-heart"></use></svg></span>
+            <span class="step-label" data-i18n="how.step4.label">Step 04</span>
+            <h3 class="step-title" data-i18n="how.step4.title">Help Them Get Home</h3>
+            <p class="step-text" data-i18n="how.step4.text">A finder scans the tag and sees bilingual emergency details instantly.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <div class="benefits-wrap">
+      <section class="benefits" aria-labelledby="benefits-title">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow" data-i18n="benefits.eyebrow">Why PawID</span>
+            <h2 class="section-title" id="benefits-title" data-i18n="benefits.title">Everything they need, in one safe place.</h2>
+          </div>
+          <p class="section-lede" data-i18n="benefits.lede">A considered set of tools for the moments that matter — simple to use, and reassuring when it counts.</p>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit-card reveal">
+            <span class="benefit-card__icon"><svg class="icon icon--paw"><use href="#i-paw"></use></svg></span>
+            <span class="benefit-card__num">01</span>
+            <h3 data-i18n="benefit.1.title">Digital Pet Identity</h3>
+            <p data-i18n="benefit.1.text">A polished, always-current profile that travels with your pet.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="benefit-card__icon"><svg class="icon"><use href="#i-qr"></use></svg></span>
+            <span class="benefit-card__num">02</span>
+            <h3 data-i18n="benefit.2.title">QR Lost Pet Tag</h3>
+            <p data-i18n="benefit.2.text">A simple scan opens the information a finder needs.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="benefit-card__icon"><svg class="icon"><use href="#i-alert"></use></svg></span>
+            <span class="benefit-card__num">03</span>
+            <h3 data-i18n="benefit.3.title">Emergency Information</h3>
+            <p data-i18n="benefit.3.text">Calm, clear guidance for whoever finds them.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="benefit-card__icon"><svg class="icon"><use href="#i-phone"></use></svg></span>
+            <span class="benefit-card__num">04</span>
+            <h3 data-i18n="benefit.4.title">Owner Contact</h3>
+            <p data-i18n="benefit.4.text">One tap to reach the person who knows them best.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="benefit-card__icon"><svg class="icon"><use href="#i-medical"></use></svg></span>
+            <span class="benefit-card__num">05</span>
+            <h3 data-i18n="benefit.5.title">Medical Notes</h3>
+            <p data-i18n="benefit.5.text">Allergies, medication and care notes, ready when needed.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="benefit-card__icon"><svg class="icon"><use href="#i-user"></use></svg></span>
+            <span class="benefit-card__num">06</span>
+            <h3 data-i18n="benefit.6.title">Multiple Pets</h3>
+            <p data-i18n="benefit.6.text">Keep every companion organised in one place.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="benefit-card__icon"><svg class="icon"><use href="#i-globe"></use></svg></span>
+            <span class="benefit-card__num">07</span>
+            <h3 data-i18n="benefit.7.title">Bilingual Emergency Information</h3>
+            <p data-i18n="benefit.7.text">English and Chinese, shown together — no switching required.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- Featured pets -->
+    <section class="section" id="pets">
+      <div class="container">
+        <div class="section-head section-head--split reveal">
+          <div>
+            <span class="eyebrow" data-i18n="featured.eyebrow">Featured pets</span>
+            <h2 class="section-title" data-i18n="featured.title">Meet the friends behind PawID.</h2>
+          </div>
+          <p class="section-lede" data-i18n="featured.lede">Real profiles, real details. Explore how each pet's identity comes together.</p>
+        </div>
+        <div class="pets-grid" id="featured-grid"></div>
+      </div>
+    </section>
+
+    <!-- QR tag -->
+    <section class="section section--tight" id="tag">
+      <div class="container">
+        <div class="tag-panel reveal">
+          <div class="tag-content">
+            <div>
+              <span class="eyebrow" data-i18n="tag.eyebrow">The PawID tag</span>
+              <span class="tag-badge" data-i18n="tag.coming">Coming soon</span>
+            </div>
+            <h2 class="tag-heading" data-i18n="tag.title">A Small Tag. A Safer Journey Home.</h2>
+            <p class="tag-copy" data-i18n="tag.body">Attach a PawID QR tag to your pet's collar. If they ever wander, a finder can scan it to reach their emergency profile — instantly, in English and Chinese, with no app required.</p>
+            <ul class="tag-list">
+              <li>
+                <span class="tag-list__icon"><svg class="icon"><use href="#i-qr"></use></svg></span>
+                <div>
+                  <h3 data-i18n="tag.1.title">No app required</h3>
+                  <p data-i18n="tag.1.text">A finder just uses the camera on their phone.</p>
+                </div>
+              </li>
+              <li>
+                <span class="tag-list__icon"><svg class="icon"><use href="#i-globe"></use></svg></span>
+                <div>
+                  <h3 data-i18n="tag.2.title">Bilingual at a glance</h3>
+                  <p data-i18n="tag.2.text">English and Chinese emergency details appear together.</p>
+                </div>
+              </li>
+              <li>
+                <span class="tag-list__icon"><svg class="icon"><use href="#i-lock"></use></svg></span>
+                <div>
+                  <h3 data-i18n="tag.3.title">Privacy by design</h3>
+                  <p data-i18n="tag.3.text">Only the information needed to help them home is shared.</p>
+                </div>
+              </li>
+            </ul>
+            <button class="btn btn--primary" type="button" data-waitlist>
+              <span data-i18n="tag.cta">Join the tag waitlist</span>
+              <svg class="icon"><use href="#i-arrow-right"></use></svg>
+            </button>
+          </div>
+          <div class="tag-visual" aria-hidden="true">
+            <div class="tag-loop"></div>
+            <div class="tag-float tag-float--one"><svg class="icon"><use href="#i-shield-check"></use></svg><span data-i18n="tag.float1">Works with any phone</span></div>
+            <div class="tag-float tag-float--two"><svg class="icon"><use href="#i-qr"></use></svg><span data-i18n="tag.float2">No app needed</span></div>
+            <div class="paw-tag">
+              <div class="paw-tag__top"><svg class="icon icon--paw"><use href="#i-paw"></use></svg>PawID</div>
+              <div class="paw-tag__qr" data-qr="PAWID-DEMO-TAG"></div>
+              <div class="paw-tag__label" data-i18n="tag.tagline">If found, scan me</div>
+              <div class="paw-tag__number">PAWID · <span data-i18n="tag.tagSub">Protected</span></div>
+            </div>
+            <div class="tag-shadow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy -->
+    <section class="section section--tight" id="privacy">
+      <div class="container">
+        <div class="privacy-panel reveal">
+          <div class="privacy-copy">
+            <span class="eyebrow" data-i18n="privacy.eyebrow">Privacy promise</span>
+            <h2 class="section-title" data-i18n="privacy.title">Public safety information. Never private details.</h2>
+            <p class="section-lede" data-i18n="privacy.lede">PawID is designed to help a finder get your pet home without ever exposing information that could put your family at risk.</p>
+          </div>
+          <div class="privacy-grid">
+            <article class="privacy-item">
+              <svg class="icon"><use href="#i-eye"></use></svg>
+              <h3 data-i18n="privacy.1.title">Public profile</h3>
+              <p data-i18n="privacy.1.text">Name, photo, breed and safe contact details.</p>
+            </article>
+            <article class="privacy-item privacy-item--private">
+              <svg class="icon"><use href="#i-lock"></use></svg>
+              <h3 data-i18n="privacy.2.title">Kept private</h3>
+              <p data-i18n="privacy.2.text">Home address, microchip number and private documents.</p>
+            </article>
+            <article class="privacy-item">
+              <svg class="icon"><use href="#i-shield-check"></use></svg>
+              <h3 data-i18n="privacy.3.title">You stay in control</h3>
+              <p data-i18n="privacy.3.text">Choose what a finder sees, and update it any time.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <span class="eyebrow" data-i18n="cta.eyebrow">Start today</span>
+          <h2 class="cta-title" data-i18n="cta.title">Give your pet the identity they deserve.</h2>
+          <p class="cta-copy" data-i18n="cta.body">Create a free digital profile in a few minutes — no app, no fuss.</p>
+          <div class="cta-actions">
+            <a class="btn btn--light" href="create.html">
+              <span data-i18n="cta.primary">Create a Pet ID</span>
+              <svg class="icon"><use href="#i-arrow-right"></use></svg>
+            </a>
+            <a class="btn btn--outline-light" href="pets.html" data-i18n="cta.secondary">Explore My Pets</a>
+          </div>
+          <p class="cta-note" data-i18n="cta.note">Demo profiles are ready to explore.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="index.html" aria-label="PawID home">
+            <span class="brand-mark" aria-hidden="true"><svg class="icon icon--paw"><use href="#i-paw"></use></svg></span>
+            <span class="brand-word">Paw<span class="brand-word__accent">ID</span></span>
+          </a>
+          <p class="footer-tagline" data-i18n="footer.tagline">A bilingual digital identity for the pets we love.</p>
+          <p class="footer-location"><span class="status-dot"></span><span data-i18n="footer.location">Sydney, Australia</span></p>
+        </div>
+        <div>
+          <h3 class="footer-title" data-i18n="footer.product">Product</h3>
+          <div class="footer-links">
+            <a href="pets.html" data-i18n="nav.pets">My Pets</a>
+            <a href="create.html" data-i18n="nav.create">Create Pet ID</a>
+            <a href="#pets" data-i18n="featured.eyebrow">Featured pets</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-title" data-i18n="footer.safety">Safety</h3>
+          <div class="footer-links">
+            <a href="pet.html?id=ice&amp;lost=1" data-i18n="footer.lostGuide">Lost Mode guide</a>
+            <a href="#tag" data-i18n="footer.qrTag">The QR tag</a>
+            <a href="#privacy" data-i18n="footer.privacy">Privacy promise</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer-title" data-i18n="footer.about">PawID</h3>
+          <div class="footer-links">
+            <a href="#how-it-works" data-i18n="footer.approach">Our approach</a>
+            <a href="mailto:hello@pawid.au" data-i18n="footer.contact">Contact</a>
+            <a href="mailto:hello@pawid.au">hello@pawid.au</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.note">PawID is a design prototype. All phone numbers shown are fictional demonstration numbers.</p>
+        <p data-i18n="footer.rights">© 2026 PawID. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="modal-root" class="modal-root"></div>
+  <div id="lost-root" hidden></div>
+  <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
